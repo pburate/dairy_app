@@ -9,7 +9,10 @@ class Products extends BaseController
         if(auth()->loggedIn())
         {
         return view('index');
-
+        }
+        else
+        {
+            return redirect()->to('/login');
         }
     }
 }
