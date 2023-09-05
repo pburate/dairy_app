@@ -28,7 +28,7 @@ class Areas extends BaseController
         $areas_model = new AreasModel();
         $data = [
             'areas_name' => $this->request->getVar('areas_name'),
-            // 'created_at'  => $this->request->getVar('created_at'),
+            // 'created_at'  => $this->request->getVar('created_at'), 
         ];
         // print_r($data) ;
         // die();
