@@ -1,33 +1,17 @@
-<?php include('Home/header.php') ?>
+<?php include(APPPATH . 'Views/Home/header.php') ?>
+<!-- menu profile quick info -->
+<?php include(APPPATH . 'Views/Home/profilemenu.php') ?>
+<!-- /menu profile quick info -->
+<!-- <br /> -->
 
+<!-- sidebar menu -->
+<?php include(APPPATH . 'Views/Home/sidemenu.php') ?>
+<!-- /sidebar menu -->
 
+<!-- top navigation -->
+<?php include(APPPATH . 'Views/Home/topmenu.php') ?>
+<!-- /top navigation -->
 
-  <body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Dairy Products!</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <?php include('Home/profilemenu.php') ?>
-            <!-- /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-            <?php include('Home/sidemenu.php') ?>
-            <!-- /sidebar menu -->
-
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <?php include('Home/topmenu.php') ?>
         <!-- /top navigation -->
 
         <!-- page content -->
