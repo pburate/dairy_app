@@ -424,4 +424,4 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
--- CREATE TABLE `dairy_app`.`areas` (`areas_id` INT(11) NOT NULL AUTO_INCREMENT , `areas_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`areas_id`)) ENGINE = InnoDB;
+CREATE TABLE `dairy_app`.`areas` (`areas_id` INT(11) NOT NULL AUTO_INCREMENT , `areas_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`areas_id`)) ENGINE = InnoDB;
