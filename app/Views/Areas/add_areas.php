@@ -26,7 +26,7 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('Areas/store_areas') ?>" method="post">
+									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('AreasController/store_areas') ?>" method="post">
 
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="areas_name">Areas<span class="required"></span>

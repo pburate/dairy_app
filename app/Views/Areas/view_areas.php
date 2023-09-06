@@ -48,8 +48,8 @@
                                 <?= $item['created_at'] ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('Areas/edit_areas/').$item['areas_id'] ?>" class="btn btn-success">Edit</a>
-                                <a href="<?= base_url('Areas/delete_areas/').$item['areas_id'] ?>" class="btn btn-danger" onclick="myFunction()">Delete</a>
+                                <a href="<?= base_url('AreasController/edit_areas/').$item['areas_id'] ?>" class="btn btn-success">Edit</a>
+                                <a href="<?= base_url('AreasController/delete_areas/').$item['areas_id'] ?>" class="btn btn-danger" onclick="myFunction()">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>

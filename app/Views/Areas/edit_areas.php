@@ -26,7 +26,7 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('Areas/update_areas') ?>" method="post">
+									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('AreasController/update_areas') ?>" method="post">
                                     <input type="hidden" name="areas_id" value="<?= $areas['areas_id'] ?>" >
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Areas<span class="required"></span>
