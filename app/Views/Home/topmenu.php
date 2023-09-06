@@ -1,5 +1,7 @@
-<div class="top_nav">
-          <div class="nav_menu">
+<html>
+  <body>
+<div class="top_nav bg-white">
+          <div class="nav_menu bg-white">
               <div class="nav toggle">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
               </div>
@@ -21,9 +23,9 @@
                     <a class="dropdown-item"  href="<?= base_url('logout') ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
-
-               
               </ul>
             </nav>
           </div>
         </div>
+</body>
+</html>

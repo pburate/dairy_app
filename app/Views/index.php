@@ -13,11 +13,11 @@
 <!-- /top navigation -->
 
         <!-- /top navigation -->
-
+ 
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
-          <div class="row" style="display: inline-block;" >
+          <div class="row" style="display: inline-block;">
           <div class="tile_count">
             <div class="col-md-2 col-sm-4  tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
@@ -52,14 +52,14 @@
           </div>
         </div>
          
-          <br />
+          <!-- <br /> -->
          
-        </div>
+        <!-- </div> -->
         <!-- /page content -->
 
         <!-- /footer content -->
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
 
 	<?php include('Home/footer.php') ?>
   
