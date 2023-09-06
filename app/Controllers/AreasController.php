@@ -55,13 +55,16 @@ class AreasController extends BaseController
     }
  
     // delete user
-    public function delete_areas($id = null){
-     $areas_model = new AreasModel();
-    //  $data = [
-    //     'deleted_at' => ,
-    // ];
-        $data['user'] = $areas_model->where('areas_id', $id)->delete($id);
-      
-        return $this->response->redirect(base_url('/AreasController'));
-    }    
+    public function delete_areas(){
+        $areas_model = new AreasModel();
+        $areas_model->delete($this->request->getVar('areas_id'));
+        $message = ['status' => 'Deleted'];
+        return $this->response->setJSON($message);
+       //  $data = [
+       //     'deleted_at' => ,
+       // ];
+           // $data['user'] = $areas_model->where('areas_id', $id)->delete($id);
+         
+           // return $this->response->redirect(base_url('/AreasController'));
+       }    
 }
