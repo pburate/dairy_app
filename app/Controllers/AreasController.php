@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\AreasModel;
 
-class Areas extends BaseController
+class AreasController extends BaseController
 {
     public function index()
     {
@@ -28,12 +28,12 @@ class Areas extends BaseController
         $areas_model = new AreasModel();
         $data = [
             'areas_name' => $this->request->getVar('areas_name'),
-            // 'created_at'  => $this->request->getVar('created_at'), 
+            'created_at'  => $this->request->getVar('created_at'), 
         ];
         // print_r($data) ;
         // die();
         $areas_model->insert($data);
-        return $this->response->redirect(base_url('/areas'));
+        return $this->response->redirect(base_url('/AreasController'));
     }
 
     public function edit_areas($id=null){
@@ -50,7 +50,7 @@ class Areas extends BaseController
             // 'update_at'  => 
         ];
         $areas_model->update($id, $data);
-        return $this->response->redirect(base_url('/areas'));
+        return $this->response->redirect(base_url('/AreasController'));
     }
  
     // delete user
@@ -61,6 +61,6 @@ class Areas extends BaseController
     // ];
         $data['user'] = $areas_model->where('areas_id', $id)->delete($id);
       
-        return $this->response->redirect(base_url('/areas'));
+        return $this->response->redirect(base_url('/AreasController'));
     }    
 }
