@@ -26,13 +26,13 @@
           </div>
           <!-- <div class="mb-"></div> -->
           <div class="d-flex justify-content-end">
-            <a href="<?= base_url('Areas/add_areas')?>" class="btn btn-primary">Add Area</a>
+            <a href="<?= base_url('AreasController/add_areas')?>" class="btn btn-primary">Add Area</a>
           </div>
           <table id="myTable" class="">
             <thead>
               <tr class="headings">
                 <th class="column-title">Areas</th>
-                <th class="column-title">Date</th>
+                <!-- <th class="column-title">Date</th> -->
                 <th class="column-title ">Action</th>
               </tr>
             </thead>
@@ -44,9 +44,7 @@
                             <td>
                                 <?= $item['areas_name'] ?>
                             </td>
-                            <td>
-                                <?= $item['created_at'] ?>
-                            </td>
+                           
                             <td>
                                 <a href="<?= base_url('AreasController/edit_areas/').$item['areas_id'] ?>" class="btn btn-success">Edit</a>
                                 <a href="<?= base_url('AreasController/delete_areas/').$item['areas_id'] ?>" class="btn btn-danger" onclick="myFunction()">Delete</a>
@@ -71,7 +69,7 @@
 <script>
   function myFunction() 
   {
-  let text = "Do you really want to delete!\nEither OK or Cancel.";
+  let text = "Do you really want to delete!";
   if (confirm(text) == true) {
     text = "You pressed OK!";
   } else {

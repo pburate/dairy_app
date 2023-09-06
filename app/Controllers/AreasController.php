@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use CodeIgniter\I18n\Time;
 use App\Models\AreasModel;
 
 class AreasController extends BaseController
@@ -28,7 +28,8 @@ class AreasController extends BaseController
         $areas_model = new AreasModel();
         $data = [
             'areas_name' => $this->request->getVar('areas_name'),
-            'created_at'  => $this->request->getVar('created_at'), 
+            'updated_at'  =>new Time('now'),
+            'created_at'  =>new Time('now'),
         ];
         // print_r($data) ;
         // die();
@@ -47,7 +48,7 @@ class AreasController extends BaseController
         $id = $this->request->getVar('areas_id');
         $data = [
             'areas_name' => $this->request->getVar('areas_name'),
-            // 'update_at'  => 
+            'updated_at'  => new Time('now'),
         ];
         $areas_model->update($id, $data);
         return $this->response->redirect(base_url('/AreasController'));

@@ -35,14 +35,14 @@
                                                 <textarea class="form-control" id="areas_name" name="areas_name" rows="3" required></textarea>
 											</div>
 										</div>
-										<div class="item form-group">
+										<!-- <div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align">Date
 											</label>
 											<div class="col-md-6 col-sm-6 ">
-												<input id="created_at" name="created_at" class="date-picker form-control" type="date" required="required" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" value="<?php $date = new \Datetime('now'); 
-echo date('Y-m-d'); ?>" >		
+												<input id="created_at" name="created_at" class="date-picker form-control" type="date" required="required" onfocus="this.type='date'" onmouseover="this.type='date'" onclick="this.type='date'" onblur="this.type='text'" value="<?php //$date = new \Datetime('now'); 
+//echo date('Y-m-d'); ?>" >		
 											</div>
-										</div>
+										</div> -->
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
