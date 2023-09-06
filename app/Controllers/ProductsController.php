@@ -7,4 +7,5 @@ class ProductsController extends BaseController{
         return view("Products/view_products");
        }
 }
+
 ?>
