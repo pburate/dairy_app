@@ -61,7 +61,7 @@
       <!-- </div>
     </div> -->
 
-	<?php include('Home/footer.php') ?>
+	<?php include('Home/footer.php') ?> 
   
   </body>
 </html>
