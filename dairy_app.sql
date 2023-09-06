@@ -424,12 +424,17 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
+<<<<<<< HEAD
 CREATE TABLE `dairy_app`.`area` (`area_id` INT(11) NOT NULL AUTO_INCREMENT , `area_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`area_id`)) ENGINE = InnoDB;
 
 
 -- 06-09-2023
 CREATE TABLE `dairy_app`.`counter_info` (`counter_info_id` INT(11) NOT NULL AUTO_INCREMENT , `counter_name` VARCHAR(50) NOT NULL , `counter_value` VARCHAR(20) NOT NULL , PRIMARY KEY (`counter_info_id`)) ENGINE = InnoDB;
-
-
 CREATE TABLE `dairy_app`.`customer` (`customer_id` INT(11) NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(1000) NOT NULL , `phone` VARCHAR(20) NOT NULL , `email` VARCHAR(1000) NOT NULL , `address` VARCHAR(3000) NOT NULL , `area_id` INT(11) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `is_blocked` VARCHAR(3) NOT NULL , `latitude` DOUBLE NOT NULL , `longitude` DOUBLE NOT NULL , `whatsapp` VARCHAR(15) NOT NULL , PRIMARY KEY (`customer_id`)) ENGINE = InnoDB;
 ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_id`) REFERENCES `area`(`area_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+CREATE TABLE `dairy_app`.`areas` (`areas_id` INT(11) NOT NULL AUTO_INCREMENT , `areas_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`areas_id`)) ENGINE = InnoDB;
+
+-- 'products' Table in dairy_app Database
+CREATE TABLE products( product_id int(11) PRIMARY KEY AUTO_INCREMENT NOT NUll, product_name varchar(500), weight int(11), unit varchar(500), selling_price_including_tax double, tax_amount int(11) );
+
