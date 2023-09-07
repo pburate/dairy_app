@@ -52,6 +52,7 @@
                                 <?= $item['product_category'] ?>
                             </td>
                             <td>
+                              
                                 <?= $item['weight'] ?>
                             </td><td>
                                 <?= $item['unit'] ?>
