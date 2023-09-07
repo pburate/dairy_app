@@ -5,5 +5,5 @@ class ProductsModel extends Model
 {
     protected $table = 'products';
     protected $primaryKey = 'product_id';
-    protected $allowedFields = ['product_name', 'weight', 'unit', 'selling_price_including_tax','tax_amount'];
+    protected $allowedFields = ['product_name','product_category' ,'weight', 'unit', 'selling_price_including_tax','tax_amount'];
 }
