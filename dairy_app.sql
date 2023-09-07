@@ -25,22 +25,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `areas`
+-- Table structure for table `area`
 --
 
-CREATE TABLE `areas` (
-  `areas_id` int(11) NOT NULL,
-  `areas_name` varchar(500) NOT NULL,
+CREATE TABLE `area` (
+  `area_id` int(11) NOT NULL,
+  `area_name` varchar(500) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `deleted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `areas`
+-- Dumping data for table `area`
 --
 
-INSERT INTO `areas` (`areas_id`, `areas_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `area` (`area_id`, `area_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (4, 'area', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -256,10 +256,10 @@ INSERT INTO `users` (`id`, `username`, `status`, `status_message`, `active`, `la
 --
 
 --
--- Indexes for table `areas`
+-- Indexes for table `area`
 --
-ALTER TABLE `areas`
-  ADD PRIMARY KEY (`areas_id`);
+ALTER TABLE `area`
+  ADD PRIMARY KEY (`area_id`);
 
 --
 -- Indexes for table `auth_groups_users`
@@ -331,10 +331,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `areas`
+-- AUTO_INCREMENT for table `area`
 --
-ALTER TABLE `areas`
-  MODIFY `areas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `area`
+  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `auth_groups_users`
@@ -424,4 +424,12 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-CREATE TABLE `dairy_app`.`areas` (`areas_id` INT(11) NOT NULL AUTO_INCREMENT , `areas_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`areas_id`)) ENGINE = InnoDB;
+CREATE TABLE `dairy_app`.`area` (`area_id` INT(11) NOT NULL AUTO_INCREMENT , `area_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`area_id`)) ENGINE = InnoDB;
+
+
+-- 06-09-2023
+CREATE TABLE `dairy_app`.`counter_info` (`counter_info_id` INT(11) NOT NULL AUTO_INCREMENT , `counter_name` VARCHAR(50) NOT NULL , `counter_value` VARCHAR(20) NOT NULL , PRIMARY KEY (`counter_info_id`)) ENGINE = InnoDB;
+
+
+CREATE TABLE `dairy_app`.`customer` (`customer_id` INT(11) NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(1000) NOT NULL , `phone` VARCHAR(20) NOT NULL , `email` VARCHAR(1000) NOT NULL , `address` VARCHAR(3000) NOT NULL , `area_id` INT(11) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `is_blocked` VARCHAR(3) NOT NULL , `latitude` DOUBLE NOT NULL , `longitude` DOUBLE NOT NULL , `whatsapp` VARCHAR(15) NOT NULL , PRIMARY KEY (`customer_id`)) ENGINE = InnoDB;
+ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_id`) REFERENCES `area`(`area_id`) ON DELETE RESTRICT ON UPDATE CASCADE;

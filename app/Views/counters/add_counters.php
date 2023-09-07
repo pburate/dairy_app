@@ -21,25 +21,33 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>Edit Areas</h2>
+									<h2>Add Counters</h2>
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('AreasController/update_areas') ?>" method="post">
-                                    <input type="hidden" name="areas_id" value="<?= $areas['area_id'] ?>" >
+									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('CountersController/store_counters') ?>" method="post">
+
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Areas<span class="required"></span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counters_name">Counters<span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-                                                <textarea class="form-control" id="area_name" name="area_name" rows="3" required><?= $areas['area_name'] ?></textarea>
+												<input type="text" id="counters_name" name="counters_name" required="required" class="form-control ">
 											</div>
 										</div>
+										<div class="item form-group">
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counters_name">Value<span class="required"></span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<input type="text" id="counters_name" name="counters_name" required="required" class="form-control ">
+											</div>
+										</div>
+									
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button class="btn btn-primary" type="button">Cancel</button>
-												<button type="submit" class="btn btn-success">Update</button>
+												<button type="submit" class="btn btn-success">Submit</button>
 											</div>
 										</div>
 

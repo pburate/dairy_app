@@ -27,9 +27,9 @@ class AreasController extends BaseController
         
         $areas_model = new AreasModel();
         $data = [
-            'areas_name' => $this->request->getVar('areas_name'),
-            'updated_at'  =>new Time('now'),
-            'created_at'  =>new Time('now'),
+            'area_name' => $this->request->getVar('area_name'),
+            'updated_at'  => Time::now('Asia/Kolkata', 'en_US'),
+            'created_at'  => Time::now('Asia/Kolkata', 'en_US'),
         ];
         // print_r($data) ;
         // die();
@@ -47,8 +47,8 @@ class AreasController extends BaseController
      $areas_model = new AreasModel();
         $id = $this->request->getVar('areas_id');
         $data = [
-            'areas_name' => $this->request->getVar('areas_name'),
-            'updated_at'  => new Time('now'),
+            'area_name' => $this->request->getVar('area_name'),
+            'updated_at'  =>  Time::now('Asia/Kolkata', 'en_US'),
         ];
         $areas_model->update($id, $data);
         return $this->response->redirect(base_url('/AreasController'));
@@ -60,11 +60,5 @@ class AreasController extends BaseController
         $areas_model->delete($this->request->getVar('areas_id'));
         $message = ['status' => 'Deleted'];
         return $this->response->setJSON($message);
-       //  $data = [
-       //     'deleted_at' => ,
-       // ];
-           // $data['user'] = $areas_model->where('areas_id', $id)->delete($id);
-         
-           // return $this->response->redirect(base_url('/AreasController'));
        }    
 }
