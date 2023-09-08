@@ -42,7 +42,7 @@
                                         <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="product_category"> Category</label><span class="required"></span>
 											</label>
                                             <div class="col-md-4 col-sm-4">
-                                            <select class="form-select form-select-sm float-end" name="product_category" id="product_category">
+                                            <select class="form-select form-select-sm float-end" name="product_category" id="product_category" required>
                                                 <option selected>Select Category </option>
                                                 <option> Regular</option>
                                                 <option>Seasonal</option>
