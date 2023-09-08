@@ -62,7 +62,7 @@
                                 <?= $item['tax_amount'] ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('ProductsController/edit_product/').$item['product_id'] ?>" class="btn btn-success" onclick="edit_product()">Edit</a>
+                                <a href="<?= base_url('ProductsController/edit_product/').$item['product_id'] ?>" class="btn btn-success">Edit</a>
             </td>
             <td>
                                 <a href="<?= base_url('ProductsController/delete_product/').$item['product_id'] ?>" class="btn btn-danger">Delete</a>
@@ -85,10 +85,3 @@
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
 
-<script>
- 
-function edit_product() 
-  {
-   
-}
-</script>
