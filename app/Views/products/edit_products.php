@@ -76,6 +76,15 @@
                                             </div>
                                         </div>
 
+                                         <!-- product tax amount -->
+                                         <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="product_tax_amount">Tax Amount</label><span class="required"></span>
+											</label> 
+                                            <div class="col-md-4 col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" value="<?= $products['tax_amount'] ?>"  required>
+                                            </div>
+                                        </div>
+
                                         <!-- product selling_price_including_tax -->
                                         <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="selling_price_including_tax">Selling Price Including Tax</label><span class="required"></span>
@@ -85,14 +94,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- product tax amount -->
-                                        <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="product_tax_amount">Tax Amount</label><span class="required"></span>
-											</label> 
-                                            <div class="col-md-4 col-sm-4">
-                                            <input type="text" class="form-control form-control-sm" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" value="<?= $products['tax_amount'] ?>"  required>
-                                            </div>
-                                        </div>
+                                       
 
 
                                         <!-- submit/cancel -->
