@@ -43,7 +43,7 @@
 											</label>
                                             <div class="col-md-4 col-sm-4">
                                             <select class="form-select form-select-sm float-end" name="product_category" id="product_category" required>
-                                                <option selected>Select Category </option>
+                                                <option>Select Category </option>
                                                 <option> Regular</option>
                                                 <option>Seasonal</option>
                                             </select>
@@ -94,7 +94,7 @@
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button type="submit" class="btn btn-success" >Submit</button>
-                                                <a href="<?= base_url('ProductsController') ?>"  class="btn btn-danger">Cancel</a>
+                        <a href="<?= base_url('ProductsController') ?>"  class="btn btn-danger">Cancel</a>
 											</div>
 										</div>
 
