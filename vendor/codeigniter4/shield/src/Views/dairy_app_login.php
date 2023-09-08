@@ -27,7 +27,7 @@
           <section class="login_content">
           <form action="<?= url_to('login') ?>" method="post">
                     <?= csrf_field() ?>
-              <h1>Login Form</h1>
+              <h1>Login</h1>
               <div>
                 <input type="text" class="form-control" placeholder="Email Address"  name="email" required="" />
               </div>
@@ -49,11 +49,11 @@
 
                 <div class="clearfix"></div>
                 <br />
-
+<!-- 
                 <div>
                   <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
-                </div>
+                </div> -->
               </div>
             </form>
           </section>

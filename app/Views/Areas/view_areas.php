@@ -33,7 +33,8 @@
               <tr class="headings">
                 <th class="column-title">Areas</th>
                 <!-- <th class="column-title">Date</th> -->
-                <th class="column-title ">Action</th>
+                <th class="column-title ">Edit</th>
+                <th class="column-title ">Delete</th>
               </tr>
             </thead>
 
@@ -48,6 +49,8 @@
                   <td>
                     <a href="<?= base_url('AreasController/edit_areas/') . $item['area_id'] ?>"
                       class="btn btn-success">Edit</a>
+                      </td>
+                      <td>
                     <button type="button" class="btn btn-danger" id="delete_btn" value="<?= $item['area_id'] ?>">
                       Delete
                     </button>
@@ -110,12 +113,12 @@
   
 
   $(document).on('click', '.areas_yes_btn', function () {
-    var areas_id = $('#hidden_delete_id').val();
+    var area_id = $('#hidden_delete_id').val();
     $.ajax({
       url: "<?= base_url('AreasController/delete_areas') ?>",
       method: "POST",
       data: {
-        'area_id': areas_id
+        'area_id': area_id
       },
       success: function (response) {
         location.reload();

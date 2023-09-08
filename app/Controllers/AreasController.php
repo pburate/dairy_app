@@ -39,13 +39,13 @@ class AreasController extends BaseController
 
     public function edit_areas($id=null){
      $areas_model = new AreasModel();
-        $data['areas'] = $areas_model->where('areas_id', $id)->first();
+        $data['areas'] = $areas_model->where('area_id', $id)->first();
         return view('Areas/edit_areas', $data);
     }
     // update user data
     public function update_areas(){
      $areas_model = new AreasModel();
-        $id = $this->request->getVar('areas_id');
+        $id = $this->request->getVar('area_id');
         $data = [
             'area_name' => $this->request->getVar('area_name'),
             'updated_at'  =>  Time::now('Asia/Kolkata', 'en_US'),
@@ -57,7 +57,7 @@ class AreasController extends BaseController
     // delete user
     public function delete_areas(){
         $areas_model = new AreasModel();
-        $areas_model->delete($this->request->getVar('areas_id'));
+        $areas_model->delete($this->request->getVar('area_id'));
         $message = ['status' => 'Deleted'];
         return $this->response->setJSON($message);
        }    
