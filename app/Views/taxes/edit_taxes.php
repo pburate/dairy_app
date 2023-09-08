@@ -21,11 +21,16 @@
 						<div class=" mx-auto col-10 col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
+<<<<<<< HEAD
 									<h2>Edit Product</h2>
+=======
+									<h2>Edit Products</h2>
+>>>>>>> f5661ab (changes)
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
 									<br />
+<<<<<<< HEAD
 									<form class="form form-label" name="myform" action="<?= base_url('TaxesController/update_tax') ?>" method="post" onsubmit="return add_validations()">
                                     <input type="hidden" name="tax_info_id" value="<?= $taxes['tax_info_id'] ?>" >
                                            
@@ -73,13 +78,16 @@
                                             </div>
                                         </div>               
                         
+
                                         <!-- submit/cancel -->
                                        
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
 												<button type="submit" class="btn btn-success" >Update</button>
+
                                                 <a href="<?= base_url('TaxesController') ?>"  class="btn btn-danger">Cancel</a>
+
 											</div>
 										</div>
 
@@ -96,6 +104,7 @@
 
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
+<<<<<<< HEAD
 <script>
 $(document).ready(function () {
 
@@ -254,3 +263,70 @@ $(document).ready(function () {
         });
     });
 </script>
+=======
+
+<script>
+
+// validation for add product
+function add_validations()
+  {
+  
+    // Validation for product_name
+   var valid_name_string = /^[A-Za-z ]+$/;
+   var name = document.forms["myform"]["product_name"].value;
+   if(name.match(valid_name_string))
+     {
+      return true;
+     }
+   else
+     {
+     alert("Product name can only contain letters.");
+     return false;
+     }
+
+
+var valid_float_number = /^[+-]?([0-9]*[.])?[0-9]+$/;
+
+
+// validation for weight
+var weight = document.forms["myform"]["product_weight"].value;
+   if(weight.match(valid_float_number))
+     {
+      return true;
+     }
+   else
+     {
+     alert("Weight is not valid.");
+     return false;
+     }
+
+
+    //  validation for selling price including tax
+    var sellingPriceIncludingTax = document.forms["myform"]["selling_price_including_tax"].value;
+     if(sellingPriceIncludingTax.match(valid_float_number))
+     {
+      return true;
+     }
+   else
+     {
+     alert(" Selling price including tax is not valid.");
+     return false;
+     }
+
+
+    //  validation for tax amount
+
+   var taxAmount = document.forms["myform"]["product_tax_amount"].value;
+     if(taxAmount.match(valid_float_number))
+     {
+      return true;
+     }
+   else
+     {
+     alert("Tax Amount is not Valid.");
+     return false;
+     }
+
+  }
+</script>
+>>>>>>> f5661ab (changes)
