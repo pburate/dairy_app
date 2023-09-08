@@ -31,8 +31,6 @@ class AreasController extends BaseController
             'updated_at'  => Time::now('Asia/Kolkata', 'en_US'),
             'created_at'  => Time::now('Asia/Kolkata', 'en_US'),
         ];
-        // print_r($data) ;
-        // die();
         $areas_model->insert($data);
         return $this->response->redirect(base_url('/AreasController'));
     }
@@ -42,7 +40,6 @@ class AreasController extends BaseController
         $data['areas'] = $areas_model->where('area_id', $id)->first();
         return view('Areas/edit_areas', $data);
     }
-    // update user data
     public function update_areas(){
      $areas_model = new AreasModel();
         $id = $this->request->getVar('area_id');
@@ -54,7 +51,6 @@ class AreasController extends BaseController
         return $this->response->redirect(base_url('/AreasController'));
     }
  
-    // delete user
     public function delete_areas(){
         $areas_model = new AreasModel();
         $areas_model->delete($this->request->getVar('area_id'));

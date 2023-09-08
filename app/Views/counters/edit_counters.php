@@ -27,26 +27,26 @@
 								<div class="x_content">
 									<br />
 									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('CountersController/update_counters') ?>" method="post">
-                                    <input type="hidden" name="counters_info_id" value="<?= $counters['counters_info_id'] ?>" >
+                                    <input type="hidden" name="counters_info_id" value="<?= $counters['counter_info_id'] ?>" >
 									<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counters_name">Counters<span class="required"></span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counter_name">Counters<span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<input type="text" id="counters_name" name="counters_name" required="required" class="form-control" value="<?= $counters['counters_name'] ?>" disabled>
+												<input type="text" id="counter_name" name="counter_name" required="required" class="form-control" value="<?= $counters['counter_name'] ?>" disabled>
 											</div>
 										</div>
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counters_value">Value<span class="required"></span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counter_value">Value<span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<input type="text" id="counters_value" name="counters_value" required="required" class="form-control" value="<?= $counters['counters_value'] ?>">
+												<input type="text" id="counter_value" name="counter_value" required="required" class="form-control" value="<?= $counters['counter_value'] ?>">
 											</div>
 										</div>
 										<div class="ln_solid"></div>
 										<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
-												<button class="btn btn-primary" type="reset">Cancel</button>
-												<button type="submit" class="btn btn-success">Update</button>
+												<button type="submit" class="btn btn-success" >Update</button>
+                                                <a href="<?= base_url('CountersController') ?>"  class="btn btn-danger">Cancel</a>
 											</div>
 										</div>
 
