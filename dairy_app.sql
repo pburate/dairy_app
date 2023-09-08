@@ -435,6 +435,6 @@ ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_i
 
 CREATE TABLE `dairy_app`.`areas` (`areas_id` INT(11) NOT NULL AUTO_INCREMENT , `areas_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`areas_id`)) ENGINE = InnoDB;
 
--- 'products' Table in dairy_app Database
+-- 07-09-2023 Prachi
 CREATE TABLE `dairy_app`.`products` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL , `product_category` VARCHAR(100) NOT NULL , `weight` INT NOT NULL , `unit` VARCHAR(500) NOT NULL , `selling_price_including_tax` DOUBLE NOT NULL , `tax_amount` INT NOT NULL , PRIMARY KEY (`product_id`)) ENGINE = InnoDB;
 
