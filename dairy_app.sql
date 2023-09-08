@@ -24,24 +24,6 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `area`
---
-
-CREATE TABLE `area` (
-  `area_id` int(11) NOT NULL,
-  `area_name` varchar(500) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `deleted_at` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `area`
---
-
-INSERT INTO `area` (`area_id`, `area_name`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(4, 'area', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -56,13 +38,6 @@ CREATE TABLE `auth_groups_users` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `auth_groups_users`
---
-
-INSERT INTO `auth_groups_users` (`id`, `user_id`, `group`, `created_at`) VALUES
-(1, 1, 'user', '2023-09-04 08:29:39'),
-(2, 2, 'user', '2023-09-04 11:29:12');
 
 -- --------------------------------------------------------
 
@@ -89,12 +64,6 @@ CREATE TABLE `auth_identities` (
 -- Dumping data for table `auth_identities`
 --
 
-INSERT INTO `auth_identities` (`id`, `user_id`, `type`, `name`, `secret`, `secret2`, `expires`, `extra`, `force_reset`, `last_used_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 'email_password', NULL, 'piyushdharpure03@gamil.com', '$2y$10$ZRo9eISw./QOGn8qhgg6befYV9lUgAvBTmtkfLs1aEzkZxJ4rmZvm', NULL, NULL, 0, '2023-09-04 08:33:00', '2023-09-04 08:29:39', '2023-09-04 08:33:00'),
-(2, 2, 'email_password', NULL, 'aditya@gmail.com', '$2y$10$s8xLbg4VVyty165XdHyvpu2pNNvLl5VKKYtkLk03gvl4Igx0Ot.8i', NULL, NULL, 0, '2023-09-05 14:04:53', '2023-09-04 11:29:12', '2023-09-05 14:04:53');
-
--- --------------------------------------------------------
-
 --
 -- Table structure for table `auth_logins`
 --
@@ -110,34 +79,6 @@ CREATE TABLE `auth_logins` (
   `success` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `auth_logins`
---
-
-INSERT INTO `auth_logins` (`id`, `ip_address`, `user_agent`, `id_type`, `identifier`, `user_id`, `date`, `success`) VALUES
-(1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-04 08:12:14', 0),
-(2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-04 08:16:55', 0),
-(3, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-04 08:16:56', 0),
-(4, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-04 08:30:28', 0),
-(5, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-04 08:31:26', 0),
-(6, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-04 08:31:30', 0),
-(7, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyushdharpure03@gamil.com', NULL, '2023-09-04 08:32:46', 0),
-(8, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyushdharpure03@gamil.com', 1, '2023-09-04 08:33:00', 1),
-(9, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', NULL, '2023-09-04 11:45:47', 0),
-(10, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 11:46:06', 1),
-(11, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'admin@gmail.com', NULL, '2023-09-04 11:48:13', 0),
-(12, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 11:48:27', 1),
-(13, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 12:01:33', 1),
-(14, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 12:41:52', 1),
-(15, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 14:04:33', 1),
-(16, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 14:21:13', 1),
-(17, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-04 14:36:13', 1),
-(18, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-05 06:41:17', 1),
-(19, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-05 07:06:27', 1),
-(20, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'piyush.adcs@gmail.com', NULL, '2023-09-05 14:04:27', 0),
-(21, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'email_password', 'aditya@gmail.com', 2, '2023-09-05 14:04:53', 1);
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `auth_permissions_users`
@@ -199,15 +140,6 @@ CREATE TABLE `migrations` (
   `batch` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
-(1, '2020-12-28-223112', 'CodeIgniter\\Shield\\Database\\Migrations\\CreateAuthTables', 'default', 'CodeIgniter\\Shield', 1693576518, 1),
-(2, '2021-07-04-041948', 'CodeIgniter\\Settings\\Database\\Migrations\\CreateSettingsTable', 'default', 'CodeIgniter\\Settings', 1693576518, 1),
-(3, '2021-11-14-143905', 'CodeIgniter\\Settings\\Database\\Migrations\\AddContextColumn', 'default', 'CodeIgniter\\Settings', 1693576518, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -243,23 +175,7 @@ CREATE TABLE `users` (
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Dumping data for table `users`
---
 
-INSERT INTO `users` (`id`, `username`, `status`, `status_message`, `active`, `last_active`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'piyush', NULL, NULL, 1, NULL, '2023-09-04 08:29:39', '2023-09-04 08:29:39', NULL),
-(2, 'aditya', NULL, NULL, 1, NULL, '2023-09-04 11:29:12', '2023-09-04 11:29:12', NULL);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `area`
---
-ALTER TABLE `area`
-  ADD PRIMARY KEY (`area_id`);
 
 --
 -- Indexes for table `auth_groups_users`
@@ -330,11 +246,6 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `area`
---
-ALTER TABLE `area`
-  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `auth_groups_users`
@@ -428,12 +339,9 @@ COMMIT;
 CREATE TABLE `dairy_app`.`area` (`area_id` INT(11) NOT NULL AUTO_INCREMENT , `area_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`area_id`)) ENGINE = InnoDB;
 
 
--- 06-09-2023
+-- 06-09-2023 piyush
 CREATE TABLE `dairy_app`.`counter_info` (`counter_info_id` INT(11) NOT NULL AUTO_INCREMENT , `counter_name` VARCHAR(50) NOT NULL , `counter_value` VARCHAR(20) NOT NULL , PRIMARY KEY (`counter_info_id`)) ENGINE = InnoDB;
 CREATE TABLE `dairy_app`.`customer` (`customer_id` INT(11) NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(1000) NOT NULL , `phone` VARCHAR(20) NOT NULL , `email` VARCHAR(1000) NOT NULL , `address` VARCHAR(3000) NOT NULL , `area_id` INT(11) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `is_blocked` VARCHAR(3) NOT NULL , `latitude` DOUBLE NOT NULL , `longitude` DOUBLE NOT NULL , `whatsapp` VARCHAR(15) NOT NULL , PRIMARY KEY (`customer_id`)) ENGINE = InnoDB;
-ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_id`) REFERENCES `area`(`area_id`) ON DELETE RESTRICT ON UPDATE CASCADE;
-
-CREATE TABLE `dairy_app`.`areas` (`areas_id` INT(11) NOT NULL AUTO_INCREMENT , `areas_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`areas_id`)) ENGINE = InnoDB;
-
+ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_id`) REFERENCES `area`(`area_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 --08-09-2023 Prachi
 CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL , `product_category` VARCHAR(100) NOT NULL , `weight` INT NOT NULL , `unit` VARCHAR(500) NOT NULL , `selling_price_including_tax` DOUBLE NOT NULL , `tax_amount` INT NOT NULL , PRIMARY KEY (`product_id`)) ENGINE = InnoDB;
