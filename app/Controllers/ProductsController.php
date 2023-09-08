@@ -8,7 +8,7 @@ class ProductsController extends BaseController{
         if (auth()->loggedIn()) {
               $product_model = new ProductsModel();
               $data['products'] = $product_model->findAll();  
-        return view("Products/view_products",$data);
+        return view("products/view_products",$data);
        }
        else {
               return redirect()->to('/login');
@@ -18,7 +18,7 @@ class ProductsController extends BaseController{
     //    add product
        public function add_products()
     {
-        return view('Products/add_products');
+        return view('products/add_products');
     }
 
     public function store_products()
@@ -49,7 +49,7 @@ class ProductsController extends BaseController{
     public function edit_product($id){
         $product_model = new ProductsModel();
         $data['products'] = $product_model->find($id);
-        return view('Products/edit_products',$data);
+        return view('products/edit_products',$data);
     }
 
     //Edit
