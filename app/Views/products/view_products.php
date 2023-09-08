@@ -32,7 +32,7 @@
                 <th> Categories</th>
                 <th> weight</th>
                 <th> Unit</th>
-                <th>Selling Price Including Tax</th>
+                <th>Selling Price With Tax</th>
                 <th> tax Amount</th>
                 <th class="column-title ">Edit</th>
                 <th class="column-title ">Delete</th>

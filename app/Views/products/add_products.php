@@ -40,6 +40,7 @@
                 </div>
               </div>
 
+<<<<<<< HEAD
               <!-- product categories -->
               <div class="item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="product_category">
@@ -66,6 +67,41 @@
                     name="product_weight" rows="3" placeholder="Weight" required>
                 </div>
               </div>
+=======
+                                        <!-- product unit -->
+                                        <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="product_unit"> Unit</label><span class="required"></span>
+											</label>
+                      <div class="col-md-4 col-sm-4">
+                                            <select class="form-select form-select-sm float-end" name="product_unit" id="product_unit" required>
+                                                <option>Select Unit</option>
+                                                <option>Litre</option>
+                                                <option>Kilogram</option>
+                                            </select>
+                                       
+                                            </div>
+                                         
+                                        </div>
+
+                                        <!-- product tax amount -->
+                                        <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="product_tax_amount">Tax Amount</label><span class="required"></span>
+											</label> 
+                                            <div class="col-md-4 col-sm-4">
+                                            <input type="text" class="form-control form-control-sm float-end" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" required>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- product selling_price_including_tax -->
+                                        <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="selling_price_including_tax">Selling Price With Tax</label><span class="required"></span>
+											</label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                            <input type="text" class="form-control form-control-sm float-end" id="selling_price_including_tax" name="selling_price_including_tax" rows="3" placeholder="Selling Price Including Tax" required>
+                                            </div>
+                                        </div>
+>>>>>>> a4eb9b4 (changes)
 
               <!-- product unit -->
               <div class="item form-group">
@@ -156,15 +192,6 @@
       return false;
     }
 
-    //validation for unit
-    var unit = document.forms["myform"]["product_unit"].value;
-    if (unit.match(valid_float_number)) {
-      return true;
-    }
-    else {
-      alert(" Unit is not Valid.");
-      return false;
-    }
 
     //  validation for selling price including tax
     var sellingPriceIncludingTax = document.forms["myform"]["selling_price_including_tax"].value;

@@ -6,8 +6,9 @@
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('AreasController') ?>">Areas</a></li>
                       <li><a href="<?= base_url('CountersController') ?>">Counters</a></li>
-                      <li><a href="#">Tax</a></li>
-                      <li><a href="<?= base_url('ProductsController') ?>">Products</a></li>
+
+                      <li><a href="<?= base_url('CustomersController') ?>">Customers</a></li>
+
                     </ul>
                   </li>
     <!-- <li><a><i class="fa fa-table"></i>Settings</a> -->
@@ -19,6 +20,7 @@
 
       <li><a href="#"><i class="fa fa-desktop"></i>Delivery Note</a>
       </li>
+<<<<<<< HEAD
      
       <li><a href="#"><i class="fa fa-desktop"></i>Billing</a>
       </li>
@@ -28,6 +30,8 @@
 
       <li><a href="#"><i class="fa fa-desktop"></i>Reports</a>
       </li>
+=======
+>>>>>>> a4eb9b4 (changes)
       </li>
 
     </ul>

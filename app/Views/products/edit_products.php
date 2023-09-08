@@ -71,8 +71,18 @@
                                         <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align float-left" for="product_unit"> Unit</label><span class="required"></span>
 											</label>
-                                            <div class="col-md-4 col-sm-3">
-                                            <input type="text" class="form-control form-control-sm" id="product_unit" name="product_unit" rows="3" placeholder="Unit" value="<?= $products['unit'] ?>" required>
+                      <div class="col-md-4 col-sm-4">
+                                            <select class="form-select form-select-sm float-end" name="product_unit" id="product_unit" required>              
+                                                <option selected>
+                                                <?= $products["unit"] ?>
+                                        </option>
+                                        <?php 
+                                        if($products["unit"]!= "Litre" ) { ?>
+                                                <option>Litre</option>
+                                                <?php } else{?>
+                                                    <option>Kilogram</option>
+                                                    <?php }?>
+                                            </select>
                                             </div>
                                         </div>
 
@@ -87,7 +97,7 @@
 
                                         <!-- product selling_price_including_tax -->
                                         <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="selling_price_including_tax">Selling Price Including Tax</label><span class="required"></span>
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="selling_price_including_tax">Selling Price With Tax</label><span class="required"></span>
 											</label>
                                             <div class="col-md-4 col-sm-4 ">
                                             <input type="text" class="form-control form-control-sm" id="selling_price_including_tax" name="selling_price_including_tax" rows="3" placeholder="Selling Price Including Tax" value="<?= $products['selling_price_including_tax'] ?>"required>
@@ -141,7 +151,7 @@ function add_validations()
      }
 
 
-var valid_float_number = /^[-+]?[0-9]*\.?[0-9]+$/;
+var valid_float_number = /^[+-]?([0-9]*[.])?[0-9]+$/;
 
 
 // validation for weight
@@ -156,17 +166,6 @@ var weight = document.forms["myform"]["product_weight"].value;
      return false;
      }
 
-     //validation for unit
-   var unit = document.forms["myform"]["product_unit"].value;
-     if(unit.match(valid_float_number))
-     {
-      return true;
-     }
-   else
-     {
-     alert(" Unit is not Valid.");
-     return false;
-     }
 
     //  validation for selling price including tax
     var sellingPriceIncludingTax = document.forms["myform"]["selling_price_including_tax"].value;
