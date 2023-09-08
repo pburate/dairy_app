@@ -11,7 +11,7 @@
 
  <div class="profile clearfix">
               <div class="profile_pic">
-            <a href="index.php"><img src="./public/assets/build/images/logo 2.png" alt="logo" class="logo_img"></a>
+            <a href="index.php"><img src=<?php echo base_url("/public/assets/build/images/logo 2.png")?> alt="logo" class="logo_img"></a>
                 
               </div>
               
