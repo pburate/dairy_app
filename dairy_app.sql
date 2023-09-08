@@ -335,7 +335,7 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-<<<<<<< HEAD
+
 CREATE TABLE `dairy_app`.`area` (`area_id` INT(11) NOT NULL AUTO_INCREMENT , `area_name` VARCHAR(500) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , PRIMARY KEY (`area_id`)) ENGINE = InnoDB;
 
 
@@ -343,5 +343,10 @@ CREATE TABLE `dairy_app`.`area` (`area_id` INT(11) NOT NULL AUTO_INCREMENT , `ar
 CREATE TABLE `dairy_app`.`counter_info` (`counter_info_id` INT(11) NOT NULL AUTO_INCREMENT , `counter_name` VARCHAR(50) NOT NULL , `counter_value` VARCHAR(20) NOT NULL , PRIMARY KEY (`counter_info_id`)) ENGINE = InnoDB;
 CREATE TABLE `dairy_app`.`customer` (`customer_id` INT(11) NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(1000) NOT NULL , `phone` VARCHAR(20) NOT NULL , `email` VARCHAR(1000) NOT NULL , `address` VARCHAR(3000) NOT NULL , `area_id` INT(11) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `is_blocked` VARCHAR(3) NOT NULL , `latitude` DOUBLE NOT NULL , `longitude` DOUBLE NOT NULL , `whatsapp` VARCHAR(15) NOT NULL , PRIMARY KEY (`customer_id`)) ENGINE = InnoDB;
 ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_id`) REFERENCES `area`(`area_id`) ON DELETE CASCADE ON UPDATE CASCADE;
---08-09-2023 Prachi
-CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL , `product_category` VARCHAR(100) NOT NULL , `weight` INT NOT NULL , `unit` VARCHAR(500) NOT NULL , `selling_price_including_tax` DOUBLE NOT NULL , `tax_amount` INT NOT NULL , PRIMARY KEY (`product_id`)) ENGINE = InnoDB;
+
+-- 08-09-2023 Prachi
+CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL , `product_category` VARCHAR(100) NOT NULL , `weight` DOUBLE NOT NULL , `unit` VARCHAR(500) NOT NULL , `selling_price_including_tax` DOUBLE NOT NULL , `tax_amount` DOUBLE NOT NULL , PRIMARY KEY (`product_id`)) ENGINE = InnoDB;
+
+
+-- 08-09-2023 Prachi
+CREATE TABLE `dairy_app`.`tax_info` ( `tax_info_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `is_deleted` TINYINT(4) NOT NULL , `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_info_id`)) ENGINE = InnoDB;

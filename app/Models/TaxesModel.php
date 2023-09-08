@@ -1,7 +1,7 @@
 <?php 
 namespace App\Models;
 use CodeIgniter\Model;
-class ProductsModel extends Model
+class TaxesModel extends Model
 {
     protected $table = 'tax_info';
     protected $primaryKey = 'tax_info_id';

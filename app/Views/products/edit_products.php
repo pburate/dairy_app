@@ -35,6 +35,8 @@
 											</label>
                                             <div class="col-md-4 col-sm-4">
                                             <input type="text" class="form-control form-control-sm" id="product_name" name="product_name" value="<?= $products['product_name'] ?>" rows="3" placeholder="Name" required>
+                                            <span id="valid_product_name"
+                                        class="text-danger md-3"></span>
                                             </div>
 										</div>
 
@@ -64,16 +66,19 @@
 											</label>
                                             <div class="col-md-4 col-sm-4">
                                             <input type="text" class="form-control form-control-sm" id="product_weight" name="product_weight" rows="3" placeholder="Weight" value="<?= $products['weight'] ?>" required>
-                                            </div>
+                                            <span id="valid_product_weight"
+                                        class="text-danger md-3"></span>
+                                          </div>
                                         </div>
 
                                         <!-- product unit -->
                                         <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align float-left" for="product_unit"> Unit</label><span class="required"></span>
 											</label>
-                      <div class="col-md-4 col-sm-4">
-                                            <select class="form-select form-select-sm float-end" name="product_unit" id="product_unit" required>              
-                                                <option selected>
+                                            <div class="col-md-4 col-sm-3">
+                                            <select class="form-select form-select-sm" name="product_unit" id="product_unit">
+
+                                            <option selected>
                                                 <?= $products["unit"] ?>
                                         </option>
                                         <?php 
@@ -91,22 +96,28 @@
                                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="product_tax_amount">Tax Amount</label><span class="required"></span>
 											</label> 
                                             <div class="col-md-4 col-sm-4">
-                                            <input type="text" class="form-control form-control-sm" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" value="<?= $products['tax_amount'] ?>"  required>
-                                            </div>
+                                          
+                 <input type="text" class="form-control form-control-sm" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" value="<?= $products['tax_amount'] ?>"  required>
+                 <span id="valid_product_tax_amount"
+                                        class="text-danger md-3"></span>
+                </div>
                                         </div>
+
+
 
                                         <!-- product selling_price_including_tax -->
                                         <div class="item form-group">
-                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="selling_price_including_tax">Selling Price With Tax</label><span class="required"></span>
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="selling_price_including_tax">Selling Price Including Tax</label><span class="required"></span>
 											</label>
                                             <div class="col-md-4 col-sm-4 ">
                                             <input type="text" class="form-control form-control-sm" id="selling_price_including_tax" name="selling_price_including_tax" rows="3" placeholder="Selling Price Including Tax" value="<?= $products['selling_price_including_tax'] ?>"required>
-                                            </div>
+                                          
+                                        <span id="valid_product_selling_price"
+                                        class="text-danger md-3"></span>
+                                          </div>
                                         </div>
 
                                        
-
-
                                         <!-- submit/cancel -->
                                        
 										<div class="ln_solid"></div>
@@ -130,68 +141,168 @@
 
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
-
 <script>
 
-// validation for add product
-function add_validations()
-  {
-  
-    // Validation for product_name
-   var valid_name_string = /^[A-Za-z ]+$/;
-   var name = document.forms["myform"]["product_name"].value;
-   if(name.match(valid_name_string))
-     {
-      return true;
+
+$(document).ready(function () {
+    var check = true;
+ 
+ //validation for product name
+     $("#product_name").keyup(function () {
+      validate_product_name();
+     });
+     var product_name_regex = /^[A-Za-z]+$/;
+
+     function validate_product_name() {
+         let product_name = $("#product_name").val();
+         if (!product_name.match(product_name_regex) || product_name.length==0) {
+            $("#valid_product_name").html("**please enter a valid product name.");
+             check=false;
+             return false;
+         }
+         else {
+            $("#valid_product_name").html('');
+            check=true;
+         }
+       
      }
-   else
+ 
+     $('#form_submit_btn').click(function()
      {
-     alert("Product name can only contain letters.");
-     return false;
+        //  check=true;           
+        validate_product_name();
+         
+         if(check==true)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+         
+     });
+    });
+
+
+$(document).ready(function () {
+    var check = true;
+ 
+     //valdidation for product weight
+
+     $("#product_weight").keyup(function () {
+      validate_product_weight();
+     });
+     var product_weight_regex = /^[-+]?[0-9]*\.?[0-9]+$/;
+ 
+     function validate_product_weight() {
+         let product_weight = $("#product_weight").val();
+         if (!product_weight.match(product_weight_regex) || product_weight.length==0) {
+            $("#valid_product_weight").html("**please enter a valid weight");
+             check=false;
+             return false;
+         }
+         else {
+            $("#valid_product_weight").html('');
+            check=true;
+         }
+       
      }
-
-
-var valid_float_number = /^[+-]?([0-9]*[.])?[0-9]+$/;
-
-
-// validation for weight
-var weight = document.forms["myform"]["product_weight"].value;
-   if(weight.match(valid_float_number))
+ 
+     $('#form_submit_btn').click(function()
      {
-      return true;
+        //  check=true;           
+        validate_product_weight();
+         
+         if(check==true)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+         
+     });
+ 
+
+//validation for product tax amount
+     $("#product_tax_amount").keyup(function () {
+      validate_product_tax_amount();
+     });
+     var product_tax_regex = /^[-+]?[0-9]*\.?[0-9]+$/;
+ 
+     function validate_product_tax_amount() {
+         let product_tax = $("#product_tax_amount").val();
+         if (!product_tax.match(product_tax_regex) || product_tax.length==0) {
+            $("#valid_product_tax_amount").html("**please enter a valid tax amount.");
+             check=false;
+             return false;
+         }
+         else {
+            $("#valid_product_tax_amount").html('');
+            check=true;
+         }
+       
      }
-   else
+ 
+     $('#form_submit_btn').click(function()
      {
-     alert("Weight is not valid.");
-     return false;
+        //  check=true;           
+        validate_product_tax_amount();
+         
+         if(check==true)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+         
+     });
+
+     //valiadation for selling price including tax
+     $("#selling_price_including_tax").keyup(function () {
+      validate_product_selling_price();
+     });
+     var product_selling_price_regex = /^[-+]?[0-9]*\.?[0-9]+$/;
+ 
+     function validate_product_selling_price() {
+         let product_selling_price = $("#selling_price_including_tax").val();
+         if (!product_selling_price.match(product_selling_price_regex) || product_selling_price.length==0) {
+            $("#valid_product_selling_price").html("**please enter a valid selling price with tax.");
+             check=false;
+             return false;
+         }
+         else {
+            $("#valid_product_selling_price").html('');
+            check=true;
+         }
+       
      }
-
-
-    //  validation for selling price including tax
-    var sellingPriceIncludingTax = document.forms["myform"]["selling_price_including_tax"].value;
-     if(sellingPriceIncludingTax.match(valid_float_number))
+ 
+     $('#form_submit_btn').click(function()
      {
-      return true;
-     }
-   else
-     {
-     alert(" Selling price including tax is not valid.");
-     return false;
-     }
+        //  check=true;           
+        validate_product_selling_price();
+         
+         if(check==true)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+         
+     });
+ });
+ 
+ 
+
+ 
 
 
-    //  validation for tax amount
-
-   var taxAmount = document.forms["myform"]["product_tax_amount"].value;
-     if(taxAmount.match(valid_float_number))
-     {
-      return true;
-     }
-   else
-     {
-     alert("Tax Amount is not Valid.");
-     return false;
-     }
-
-  }
+ 
 </script>

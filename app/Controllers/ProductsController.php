@@ -23,6 +23,7 @@ class ProductsController extends BaseController{
 
     public function store_products()
     {
+        $session = \Config\Services::session();
        $product_model = new ProductsModel();
         $data = [
             'product_name' => $this->request->getPost('product_name'),
@@ -34,14 +35,18 @@ class ProductsController extends BaseController{
         ];
         print_r($data);
         $product_model->save($data);
+
+$session->setFlashdata('status', 'Product has inserted Successfully');
         return $this->response->redirect(base_url('/ProductsController'));
     }
 
     //delete product
 
     public function delete_product($id){
+        $session = \Config\Services::session();
         $product_model = new ProductsModel();
             $product_model->delete($id);
+$session->setFlashdata('status', 'Product has deleted Successfully');
         return $this->response->redirect(base_url('/ProductsController'));
     }
 
@@ -54,6 +59,7 @@ class ProductsController extends BaseController{
 
     //Edit
     public function update_product(){
+        $session = \Config\Services::session();
         $product_model = new ProductsModel();
         $id = $this->request->getPost('product_id');
         $data = [
@@ -65,6 +71,7 @@ class ProductsController extends BaseController{
             'tax_amount'  => $this->request->getPost('product_tax_amount'),
         ];
         $product_model->update($id, $data);
+$session->setFlashdata('status', 'Product has updated Successfully');
         return $this->response->redirect(base_url('/ProductsController'));
     }
 }
