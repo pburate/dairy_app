@@ -6,21 +6,28 @@
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('AreasController') ?>">Areas</a></li>
                       <li><a href="<?= base_url('CountersController') ?>">Counters</a></li>
-                      <li><a href="<?= base_url('CustomersController') ?>">Customers</a></li>
+                      <li><a href="#">Tax</a></li>
                       <li><a href="<?= base_url('ProductsController') ?>">Products</a></li>
-
                     </ul>
                   </li>
-    <li><a><i class="fa fa-table"></i>Settings</a>
+    <!-- <li><a><i class="fa fa-table"></i>Settings</a> -->
       </li>
-      <li><a href="ProductsController"><i class="fa fa-home"></i>Products</a>
-      </li>
+      <li><a><i class="fa fa-bar-chart-o"></i>Stock</a></li>
+      <li><a href="<?= base_url('CustomersController') ?>"> <i class="fa fa-user aero"></i>Customers</a></li>
       <!-- <a href=""></a> -->
-      <li><a><i class="fa fa-edit"></i>Customers</a></li>
-      <li><a><i class="fa fa-desktop"></i>Billing</a>
+      <li><a href="#"><i class="glyphicon glyphicon-trash"></i> Wastage</a></li>
+
+      <li><a href="#"><i class="fa fa-desktop"></i>Delivery Note</a>
       </li>
      
+      <li><a href="#"><i class="fa fa-desktop"></i>Billing</a>
+      </li>
 
+      <li><a href="#"><i class="fa fa-desktop"></i>Payments</a>
+      </li>
+
+      <li><a href="#"><i class="fa fa-desktop"></i>Reports</a>
+      </li>
       </li>
 
     </ul>
