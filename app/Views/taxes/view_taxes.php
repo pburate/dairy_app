@@ -110,7 +110,6 @@
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
 <script>
-
 setTimeout(() => {
   const alert = document.getElementById('alert');
   alert.style.display = 'none';
