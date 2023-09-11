@@ -21,7 +21,7 @@
 			<div class="col-md-12 col-sm-12 ">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Add Customers</h2>
+						<h2>Add Customer</h2>
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
@@ -30,12 +30,12 @@
 							action="<?= base_url('CustomersController/store_customers') ?>" method="post">
 
 							<div class="item form-group">
-								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customers
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customer's
 									Name<span class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
 									<input type="text" id="full_name" name="customer[full_name]" required="required"
-										class="form-control " placeholder="Enter full name">
+										class="form-control " placeholder="Enter Full Name">
 										<span id="check_full_name" class="text-danger row font-weight-bold"></span>
 
 								</div>
@@ -47,7 +47,7 @@
 								</label>
 								<div class="col-md-4 col-sm-4">
 									<input type="number" id="phone" name="customer[phone]" required="required"
-										class="form-control " placeholder="Phone number" >
+										class="form-control " placeholder="Enter Phone Number" >
 										<span id="check_phone" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
@@ -57,7 +57,7 @@
 								</label>
 								<div class="col-md-4 col-sm-4">
 									<input type="number" id="whatsapp" name="customer[whatsapp]" required="required"
-										class="form-control " placeholder="Whatsapp number ">
+										class="form-control " placeholder="Enter Whatsapp Number ">
 										<span id="check_whatsapp" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
@@ -68,7 +68,7 @@
 								</label>
 								<div class="col-md-4 col-sm-4">
 									<input type="email" id="email" name="customer[email]" required="required"
-										class="form-control " placeholder="Eamil">
+										class="form-control " placeholder="Enter Email">
 										<span id="check_email" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
@@ -79,7 +79,7 @@
 								</label>
 								<div class="col-md-4 col-sm-4">
 									<textarea class="form-control" id="address" name="customer[address]" rows="2" 
-									placeholder="Address"
+									placeholder="Etner Address"
 										required></textarea>
 										<span id="check_address" class="text-danger row font-weight-bold"></span>
 								</div>

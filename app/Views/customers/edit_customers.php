@@ -20,7 +20,7 @@
 			<div class="col-md-12 col-sm-12 ">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Add Customers</h2>
+						<h2>Edit Customer</h2>
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
@@ -32,7 +32,7 @@
 								value="<?= $customers['customer_id'] ?>">
 
 							<div class="item form-group">
-								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customers
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customer's
 									Name<span class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">

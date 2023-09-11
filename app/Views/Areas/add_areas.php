@@ -24,7 +24,7 @@
 			<div class="col-md-12 col-sm-12 ">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Add Areas</h2>
+						<h2>Add Area</h2>
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
@@ -33,12 +33,12 @@
 							action="<?= base_url('AreasController/store_areas') ?>" method="post">
 
 							<div class="item form-group">
-								<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Areas<span
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Area<span
 										class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4 ">
 									<input type="text"class="form-control" id="area_name" name="area_name" rows="3"
-									placeholder="Area" required>
+									placeholder="Enter Area" required>
 									<span id="check_area_name" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>

@@ -32,7 +32,7 @@ class CustomersController extends BaseController
         return $this->response->redirect(base_url('/CustomersController'));
     }
 
-    public function edit_customers($id = null)
+    public function edit_customers($id)
     {
         $areas_model = new AreasModel;
         $data['areas']= $areas_model->findAll();

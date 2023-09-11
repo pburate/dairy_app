@@ -21,19 +21,19 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
-            <h2>counters</h2>
+            <h2>Counters</h2>
             <div class="clearfix"></div>
           </div>
           <!-- <div class="mb-"></div> -->
           <div class="d-flex justify-content-end">
-            <a href="<?= base_url('CountersController/add_counters')?>" class="btn btn-primary">Add Counters</a>
+            <a href="<?= base_url('CountersController/add_counters')?>" class="btn btn-primary">Add Counter</a>
           </div>
           <table id="myTable" class="">
             <thead>
               <tr class="headings">
                 <th class="column-title">Counters</th>
                 <th class="column-title">Counters Value</th>
-                <th class="column-title ">Action</th>
+                <th class="column-title">Edit</th>
               </tr>
             </thead>
 
@@ -51,10 +51,6 @@
                   <td>
                     <a href="<?= base_url('CountersController/edit_counters/') . $item['counter_info_id'] ?>"
                       class="btn btn-success">Edit</a>
-                    <!-- <button type="button" class="btn btn-danger" id="delete_btn" value="<?//= $item['counters_id'] ?>">
-                      Delete
-                    </button> -->
-
                   </td>
                 </tr>
               <?php } ?>

@@ -13,7 +13,7 @@ $(document).ready(function () {
          let counter = $("#counter_name").val();
 
          if (!counter.match(counter_name_regex) || counter.lenght==0) {
-            $("#check_counter_name").html("**please enter a valid counter name");
+            $("#check_counter_name").html("Please enter a valid counter name");
              check=false;
              return false;
          }
@@ -35,7 +35,7 @@ $(document).ready(function () {
         let counter = $("#counter_value").val();
 
         if (!counter.match(counter_value_regex) || counter.lenght==0) {
-           $("#check_counter_value").html("**please enter a valid counter value");
+           $("#check_counter_value").html("Please enter a valid counter value");
             check=false;
             return false;
         }

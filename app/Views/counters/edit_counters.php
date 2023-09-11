@@ -21,7 +21,7 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>Edit Areas</h2>
+									<h2>Edit Counter</h2>
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
@@ -29,7 +29,7 @@
 									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('CountersController/update_counters') ?>" method="post">
                                     <input type="hidden" name="counter_info_id" value="<?= $counters['counter_info_id'] ?>" >
 									<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counter_name">Counters<span class="required"></span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="counter_name">Counter<span class="required"></span>
 											</label>
 											<div class="col-md-4 col-sm-4">
 												<input type="text" id="counter_name" name="counter_name" required="required" class="form-control" value="<?= $counters['counter_name'] ?>">

@@ -21,7 +21,7 @@
 						<div class="col-md-12 col-sm-12 ">
 							<div class="x_panel">
 								<div class="x_title">
-									<h2>Edit Areas</h2>
+									<h2>Edit Area</h2>
 									<div class="clearfix"></div>
 								</div>
 								<div class="x_content">
@@ -29,7 +29,7 @@
 									<form id="form" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('AreasController/update_areas') ?>" method="post"  onsubmit="return area_validations()">
                                     <input type="hidden" name="area_id" value="<?= $areas['area_id'] ?>" >
 										<div class="item form-group">
-											<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Areas<span class="required"></span>
+											<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Area<span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6">
 												<input type="text" class="form-control" id="area_name" name="area_name" required value="<?= $areas['area_name'] ?>" >

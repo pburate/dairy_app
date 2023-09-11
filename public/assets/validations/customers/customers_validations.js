@@ -6,7 +6,7 @@ $(document).ready(function () {
     var full_name_regex = /^[A-Za-z ]{8,}$/;
     var phone_regex = /^[6-9]{1}[0-9]{9}$/;
     var whatsapp_regex = /^[6-9]{1}[0-9]{9}$/;
-    var email_regex = /^[\w-\.][a-zA-Z0-9]{5,}@([\w-]+\.)+[\w-]{2,4}$/;
+    var email_regex = /^[a-zA-Z0-9._]{5,}@([\w-]+.)+[\w-]{2,4}$/;
     var address_regex = /^[A-Za-z0-9 ]{8,}$/;
 
 
@@ -119,7 +119,7 @@ $(document).ready(function () {
 
 
 
-    $("#form_submit").click(function () {
+    $("#form_submit_btn").click(function () {
         validate_area();
     });
     $("#area_name").click(function () {
@@ -128,7 +128,7 @@ $(document).ready(function () {
 
     function validate_area() {
         let area_value = $("#area_name").val();
-        if (area_value == "Customer Area") {
+        if (area_value == "Select Area") {
             $("#check_area_name").html("Please select valid area");
             check=false;
               return false;
@@ -151,6 +151,7 @@ $(document).ready(function () {
          validate_phone_value();
          validate_whatsapp_value();
          validate_email();
+         validate_area();
          validate_address_name();
 
          if(check==true)
@@ -161,8 +162,6 @@ $(document).ready(function () {
          {
              return false;
          }
-        //  return ;
-         
      })
  
  })

@@ -26,7 +26,7 @@
           </div>
           <!-- <div class="mb-"></div> -->
           <div class="d-flex justify-content-end">
-            <a href="<?= base_url('AreasController/add_areas')?>" class="btn btn-primary">Add Areas</a>
+            <a href="<?= base_url('AreasController/add_areas')?>" class="btn btn-primary">Add Area</a>
           </div>
           <table id="myTable" class="">
             <thead>

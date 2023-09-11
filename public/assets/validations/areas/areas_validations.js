@@ -7,13 +7,13 @@ $(document).ready(function () {
      $("#area_name").keyup(function () {
          validate_areas();
      });
-     var area_regex = /^[A-Za-z ]{5,}$/;
+     var area_regex = /^[A-Za-z]{3,}$/;
  
      function validate_areas() {
          let area = $("#area_name").val();
 
          if (!area.match(area_regex) || area.lenght==0) {
-            $("#check_area_name").html("**please enter a valid area");
+            $("#check_area_name").html("Please enter a valid area");
              check=false;
              return false;
          }

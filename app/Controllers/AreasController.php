@@ -32,7 +32,7 @@ class AreasController extends BaseController
         return $this->response->redirect(base_url('/AreasController'));
     }
 
-    public function edit_areas($id=null){
+    public function edit_areas($id){
      $areas_model = new AreasModel();
         $data['areas'] = $areas_model->where('area_id', $id)->first();
         return view('areas/edit_areas', $data);
@@ -53,5 +53,15 @@ class AreasController extends BaseController
         $areas_model->delete($this->request->getVar('area_id'));
         $message = ['status' => 'Deleted'];
         return $this->response->setJSON($message);
-       }    
+       }  
+       
+       public function check_duplicate()
+       {
+        // $areas_model = new AreasModel();
+        // echo "area";
+        // die();
+        // $areas_model->$this->request->getVar('area');
+        // $message = ['status' => 'Deleted'];
+        // return $this->response->setJSON($message);
+       }
 }

@@ -21,7 +21,7 @@
 			<div class="col-md-12 col-sm-12 ">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Add Counters</h2>
+						<h2>Add Counter</h2>
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
@@ -31,10 +31,10 @@
 
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align"
-									for="counters_name">Counters<span class="required"></span>
+									for="counters_name">Counter<span class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<input type="text" id="counter_name" name="counter_name" required="required"
+									<input type="text" id="counter_name" name="counter_name" required  pattern="[A-Za-z]{3}"
 										class="form-control "placeholder="Counter Name">
 									<span id="check_counter_name" class="text-danger row font-weight-bold"></span>
 								</div>
@@ -44,7 +44,7 @@
 									for="counter_value">Value<span class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<input type="text" id="counter_value" name="counter_value" required="required"
+									<input type="text" id="counter_value" name="counter_value" required 
 										class="form-control " placeholder="Counter Value">
 									<span id="check_counter_value" class="text-danger row font-weight-bold"></span>
 								</div>

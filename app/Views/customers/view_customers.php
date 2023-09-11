@@ -21,17 +21,17 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Areas</h2>
+            <h2>Customers</h2>
             <div class="clearfix"></div>
           </div>
           <!-- <div class="mb-"></div> -->
           <div class="d-flex justify-content-end">
-            <a href="<?= base_url('CustomersController/add_customers')?>" class="btn btn-primary">Add Customers</a>
+            <a href="<?= base_url('CustomersController/add_customers')?>" class="btn btn-primary">Add Customer</a>
           </div>
           <table id="myTable" class="">
             <thead>
               <tr class="headings">
-                <th class="column-title">Customers Name</th>
+                <th class="column-title">Customer's Name</th>
                 <th class="column-title">Phone</th>
                 <th class="column-title">Email</th>
                 <th class="column-title">Address</th>
@@ -63,7 +63,6 @@
                   <td>
                     <?= $item['whatsapp'] ?>
                   </td>
-
                   <td>
                     <a href="<?= base_url('CustomersController/edit_customers/') . $item['customer_id'] ?>"
                       class="btn btn-success">Edit</a>
