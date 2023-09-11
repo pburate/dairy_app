@@ -8,13 +8,10 @@ class AreasController extends BaseController
 {
     public function index()
     {
-        if (auth()->loggedIn()) {
-            $areas_model = new AreasModel();
+        $areas_model = new AreasModel();
             $data['areas'] = $areas_model->findAll();
             return view('areas/view_areas', $data);
-        } else {
-            return redirect()->to('/login');
-        }
+       
     }
     public function add_areas()
     {
