@@ -44,7 +44,16 @@ $session->setFlashdata('status', 'Tax has inserted Successfully');
     public function delete_tax($id){
         $taxes_model = new TaxesModel();
         $session = \Config\Services::session();
+        // $db      = \Config\Database::connect();
+        // $builder = $db->table('tax_info');
+        // $query = $builder->getResultArray();
+        // $data["query"] = $query;
+        // $builder->select('is_deleted');
+        // $builder->where($id);
+        // $query = $builder->getResultArray();
+        // return $query; 
         // $taxes_model->delete($id);
+        
 $session->setFlashdata('status', 'Tax has deleted Successfully');
         return $this->response->redirect(base_url('/TaxesController'));
     }

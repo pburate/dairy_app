@@ -10,6 +10,12 @@
 <!-- /top navigation -->
 
 <!-- page content -->
+
+<?php 
+   foreach($query as $row){
+?>
+  <h1><?= $row["tax_info_id"]?></h1>
+<?php }?>
 <div class="right_col" role="main">
   <div class="">
     <div class="row" style="display: block;">
@@ -83,7 +89,7 @@
       Do you want to delete ?
       </div>
       <div class="modal-footer">
-        <a  href="<?= base_url('TaxesController/delete_tax/').$item['tax_info_id'] ?>" class="btn btn-success" >Yes</a>
+        <a  href="<?= base_url('TaxesController/delete_tax/').$item['tax_info_id'] ?>" class="btn btn-success">Yes</a>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
        
       </div>
