@@ -44,8 +44,7 @@ $session->setFlashdata('status', 'Tax has inserted Successfully');
     public function delete_tax($id){
         $taxes_model = new TaxesModel();
         $session = \Config\Services::session();
-
-            $taxes_model->delete($id);
+            // $taxes_model->delete($id);
 $session->setFlashdata('status', 'Tax has deleted Successfully');
         return $this->response->redirect(base_url('/TaxesController'));
     }
