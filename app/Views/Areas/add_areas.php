@@ -1,4 +1,6 @@
+
 <?php include(APPPATH . 'Views/Home/header.php') ?>
+
 <!-- menu profile quick info -->
 <?php include(APPPATH . 'Views/Home/profilemenu.php') ?>
 <!-- /menu profile quick info -->
@@ -27,23 +29,24 @@
 					</div>
 					<div class="x_content">
 						<br />
-						<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+						<form id="form" name="myform" data-parsley-validate class="form-horizontal form-label-left"
 							action="<?= base_url('AreasController/store_areas') ?>" method="post">
 
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Areas<span
 										class="required"></span>
 								</label>
-								<div class="col-md-6 col-sm-6 ">
-									<textarea class="form-control" id="area_name" name="area_name" rows="3"
-										required></textarea>
+								<div class="col-md-4 col-sm-4 ">
+									<input type="text"class="form-control" id="area_name" name="area_name" rows="3"
+									placeholder="Area" required>
+									<span id="check_area_name" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
 							<div class="ln_solid"></div>
 							<div class="item form-group">
 								<div class="col-md-6 col-sm-6 offset-md-3">
-									<button type="submit" class="btn btn-success">Submit</button>
+									<button type="submit" id="form_submit_btn" class="btn btn-success">Submit</button>
 									<a href="<?= base_url('AreasController') ?>" class="btn btn-danger">Cancel</a>
 								</div>
 							</div>
@@ -61,3 +64,4 @@
 
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
+<script src="<?= base_url('/public/assets/validations/areas/areas_validations.js') ?>"></script>

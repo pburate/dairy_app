@@ -26,19 +26,20 @@
 								</div>
 								<div class="x_content">
 									<br />
-									<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('AreasController/update_areas') ?>" method="post">
-                                    <input type="hidden" name="areas_id" value="<?= $areas['area_id'] ?>" >
+									<form id="form" data-parsley-validate class="form-horizontal form-label-left" action="<?= base_url('AreasController/update_areas') ?>" method="post"  onsubmit="return area_validations()">
+                                    <input type="hidden" name="area_id" value="<?= $areas['area_id'] ?>" >
 										<div class="item form-group">
 											<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_name">Areas<span class="required"></span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-                                                <textarea class="form-control" id="area_name" name="area_name" rows="3" required><?= $areas['area_name'] ?></textarea>
+												<input type="text" class="form-control" id="area_name" name="area_name" required value="<?= $areas['area_name'] ?>" >
+												<span id="check_area_name" class="text-danger row font-weight-bold"></span>
 											</div>
 										</div>
 										<div class="ln_solid"></div>
 										<div class="item form-group">
-											<div class="col-md-6 col-sm-6 offset-md-3">
-												<button type="submit" class="btn btn-success" >Update</button>
+											<div class="col-md-4 col-sm-4 offset-md-3">
+												<button type="submit" id="form_submit_btn" class="btn btn-success" >Update</button>
                                                 <a href="<?= base_url('AreasController') ?>"  class="btn btn-danger">Cancel</a>
 											</div>
 										</div>
@@ -56,3 +57,4 @@
 
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
+<script src="<?= base_url('/public/assets/validations/areas/areas_validations.js') ?>"></script>

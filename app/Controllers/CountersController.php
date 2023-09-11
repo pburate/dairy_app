@@ -31,7 +31,7 @@ class CountersController extends BaseController
         return $this->response->redirect(base_url('/CountersController'));
     }
 
-    public function edit_counters($id=null){
+    public function edit_counters($id){
      $counter_model = new CountersModel();
         $data['counters'] = $counter_model->where('counter_info_id', $id)->first();
         return view('counters/edit_counters', $data);

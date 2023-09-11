@@ -36,8 +36,9 @@
 									Name<span class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<input type="text" id="full_name" name="full_name" required="required"
+									<input type="text" id="full_name" name="customer[full_name]" required="required"
 										class="form-control " value="<?= $customers['full_name'] ?>">
+										<span id="check_full_name" class="text-danger row font-weight-bold"></span>	
 								</div>
 							</div>
 
@@ -46,8 +47,9 @@
 									Number<span class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<input type="number" id="phone" name="phone" required="required"
+									<input type="number" id="phone" name="customer[phone]" required="required"
 										class="form-control " value="<?= $customers['phone'] ?>">
+										<span id="check_phone" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 							<div class="item form-group">
@@ -55,8 +57,9 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<input type="number" id="whatsapp" name="whatsapp" required="required"
+									<input type="number" id="whatsapp" name="customer[whatsapp]" required="required"
 										class="form-control " value="<?= $customers['whatsapp'] ?>">
+										<span id="check_whatsapp" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -65,8 +68,9 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<input type="email" id="email" name="email" required="required"
+									<input type="email" id="email" name="customer[email]" required="required"
 										class="form-control " value="<?= $customers['email'] ?> ">
+										<span id="check_email" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -75,8 +79,9 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<textarea class="form-control" id="address" name="address" rows="3"
+									<textarea class="form-control" id="address" name="customer[address]" rows="2"
 										required> <?= $customers['address'] ?></textarea>
+										<span id="check_address" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -85,7 +90,7 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<select class="select2_single form-control" tabindex="-1" name="area_id"
+									<select class="select2_single form-control" tabindex="-1" name="customer[area_id]"
 										id="area_id" for="area_id"
 										 value="<?= $customers['area_id'] ?>">
 										
@@ -96,6 +101,7 @@
 											</option>
 										<?php endforeach ?>
 									</select>
+									<span id="check_area_id" class=" parsley-error text-danger row font-weight-bold"></span>
 								</div>
 
 							</div>
@@ -105,8 +111,9 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<input type="text" id="latitude" name="latitude" required="required"
+									<input type="text" id="latitude" name="customer[latitude]" required="required"
 										class="form-control " value="<?= $customers['latitude'] ?> ">
+										<span id="check_latitude" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -115,15 +122,16 @@
 									for="longitude">longitude<span class="required"></span>
 								</label>
 								<div class="col-md-6 col-sm-6">
-									<input type="text" id="longitude" name="value=" <?= $customers['email'] ?> ""
+									<input type="text" id="longitude" name="customer[value]=" <?= $customers['email'] ?> ""
 										required="required" class="form-control "
 										value="<?= $customers['longitude'] ?> ">
+										<span id="check_longitude" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 							<div class="ln_solid"></div>
 							<div class="item form-group">
 											<div class="col-md-6 col-sm-6 offset-md-3">
-												<button type="submit" class="btn btn-success" >Update</button>
+												<button type="submit" id="form_submit_btn" class="btn btn-success" >Update</button>
                                                 <a href="<?= base_url('CustomersController') ?>"  class="btn btn-danger">Cancel</a>
 											</div>
 										</div>
@@ -141,3 +149,4 @@
 
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
+<script src="<?= base_url('/public/assets/validations/customers/customers_validations.js') ?>"></script>

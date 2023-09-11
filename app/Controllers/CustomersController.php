@@ -26,19 +26,9 @@ class CustomersController extends BaseController
     {
 
         $customers_model = new CustomersModel();
-        $data = [
-            'full_name' => $this->request->getVar('full_name'),
-            'phone' => $this->request->getVar('phone'),
-            'email' => $this->request->getVar('email'),
-            'address' => $this->request->getVar('address'),
-            'area_id' => $this->request->getVar('area_id'),
-            'created_at' => Time::now('Asia/Kolkata', 'en_US'),
-            'updated_at' => Time::now('Asia/Kolkata', 'en_US'),
-            'whatsapp' => $this->request->getVar('whatsapp'),
-            'latitude' => $this->request->getVar('latitude'),
-            'longitude' => $this->request->getVar('longitude'),
-        ];
-        $customers_model->insert($data);
+        $customer = $this->request->getVar("customer");
+        $customers_model->insert($customer);
+        
         return $this->response->redirect(base_url('/CustomersController'));
     }
 
@@ -58,21 +48,11 @@ class CustomersController extends BaseController
     {
         // die();
         $customers_model = new CustomersModel();
+        
         $id = $this->request->getVar('customer_id');
-        $data = [
-            'full_name' => $this->request->getVar('full_name'),
-            'phone' => $this->request->getVar('phone'),
-            'email' => $this->request->getVar('email'),
-            'address' => $this->request->getVar('address'),
-            'area_id' => $this->request->getVar('area_id'),
-            'updated_at' => Time::now('Asia/Kolkata', 'en_US'),
-            'latitude' => $this->request->getVar('latitude'),
-            'longitude' => $this->request->getVar('longitude'),
-            'whatsapp' => $this->request->getVar('whatsapp'),
-        ];
-        // print_r($data);
-        // die();
-        $customers_model->update($id, $data);
+        $customer = $this->request->getVar("customer");
+    
+        $customers_model->update($id, $customer);
         return $this->response->redirect(base_url('/CustomersController'));
     }
 

@@ -11,14 +11,14 @@ class AreasController extends BaseController
         if (auth()->loggedIn()) {
             $areas_model = new AreasModel();
             $data['areas'] = $areas_model->findAll();
-            return view('Areas/view_areas', $data);
+            return view('areas/view_areas', $data);
         } else {
             return redirect()->to('/login');
         }
     }
     public function add_areas()
     {
-        return view('Areas/add_areas');
+        return view('areas/add_areas');
     }
 
     
@@ -38,7 +38,7 @@ class AreasController extends BaseController
     public function edit_areas($id=null){
      $areas_model = new AreasModel();
         $data['areas'] = $areas_model->where('area_id', $id)->first();
-        return view('Areas/edit_areas', $data);
+        return view('areas/edit_areas', $data);
     }
     public function update_areas(){
      $areas_model = new AreasModel();

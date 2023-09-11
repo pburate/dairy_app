@@ -146,8 +146,6 @@
 
 
     var valid_float_number = /^[-+]?[0-9]*\.?[0-9]+$/;
-
-
     // validation for weight
     var weight = document.forms["myform"]["product_weight"].value;
     if (weight.match(valid_float_number)) {
