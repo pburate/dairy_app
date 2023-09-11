@@ -11,7 +11,7 @@ $(document).ready(function () {
      function validate_tax_name() {
          let tax_name = $("#tax_name").val();
          if (!tax_name.match(tax_regex) || tax_name.length==0) {
-            $("#valid_tax_name").html("**please enter a valid tax name.");
+            $("#valid_tax_name").html("Please enter a valid tax name.");
              check=false;
              return false;
          }
@@ -54,7 +54,7 @@ $(document).ready(function () {
      function validate_tax_percentage() {
          let tax_percentage = $("#tax_percentage").val();
          if (!tax_percentage.match(tax_percentage_regex) || tax_percentage.length==0) {
-            $("#valid_tax_percentage").html("**please enter a valid percentage.");
+            $("#valid_tax_percentage").html("Please enter a valid percentage.");
              check=false;
              return false;
          }
@@ -90,7 +90,7 @@ $(document).ready(function () {
      function validate_tax_reg_number() {
          let tax_reg_number = $("#tax_reg_number").val();
          if (!tax_reg_number.match(tax_reg_num_regex) || tax_reg_number.length==0) {
-            $("#valid_reg_number").html("**please enter a valid reg number.");
+            $("#valid_reg_number").html("Please enter a valid reg number.");
              check=false;
              return false;
          }
@@ -127,7 +127,7 @@ $(document).ready(function () {
      function validate_tax_hsn_code() {
          let tax_hsn_code = $("#hsn_code").val();
          if (!tax_hsn_code.match(tax_hsn_code_regex) || tax_hsn_code.length==0) {
-            $("#valid_hsn_code").html("**please enter a valid HSN code.");
+            $("#valid_hsn_code").html("Please enter a valid HSN code.");
              check=false;
              return false;
          }

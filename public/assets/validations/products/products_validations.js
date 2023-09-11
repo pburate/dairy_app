@@ -12,7 +12,7 @@ $(document).ready(function () {
      function validate_product_name() {
          let product_name = $("#product_name").val();
          if (!product_name.match(product_name_regex) || product_name.length==0) {
-            $("#valid_product_name").html("**please enter a valid product name.");
+            $("#valid_product_name").html("Please enter a valid product name.");
              check=false;
              return false;
          }
@@ -54,7 +54,7 @@ $(document).ready(function () {
      function validate_product_weight() {
          let product_weight = $("#product_weight").val();
          if (!product_weight.match(product_weight_regex) || product_weight.length==0) {
-            $("#valid_product_weight").html("**please enter a valid weight");
+            $("#valid_product_weight").html("Please enter a valid weight");
              check=false;
              return false;
          }
@@ -91,7 +91,7 @@ $(document).ready(function () {
      function validate_product_tax_amount() {
          let product_tax = $("#product_tax_amount").val();
          if (!product_tax.match(product_tax_regex) || product_tax.length==0) {
-            $("#valid_product_tax_amount").html("**please enter a valid tax amount.");
+            $("#valid_product_tax_amount").html("Please enter a valid tax amount.");
              check=false;
              return false;
          }
@@ -127,7 +127,7 @@ $(document).ready(function () {
      function validate_product_selling_price() {
          let product_selling_price = $("#selling_price_including_tax").val();
          if (!product_selling_price.match(product_selling_price_regex) || product_selling_price.length==0) {
-            $("#valid_product_selling_price").html("**please enter a valid selling price with tax.");
+            $("#valid_product_selling_price").html("Please enter a valid selling price with tax.");
              check=false;
              return false;
          }
