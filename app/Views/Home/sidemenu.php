@@ -6,11 +6,10 @@
                     <ul class="nav child_menu">
                       <li><a href="<?= base_url('AreasController') ?>">Areas</a></li>
                       <li><a href="<?= base_url('CountersController') ?>">Counters</a></li>
-                      <li><a href="<?= base_url('ProductsController') ?>">Products</a></li>\
+                      <li><a href="<?= base_url('ProductsController') ?>">Products</a></li>
                       <li><a href="<?= base_url('TaxesController') ?>">Taxes</a></li>
                     </ul>
                   </li>
-    <!-- <li><a><i class="fa fa-table"></i>Settings</a> -->
       </li>
       <li><a><i class="fa fa-bar-chart-o"></i>Stock</a></li>
       <li><a href="<?= base_url('CustomersController') ?>"> <i class="fa fa-user aero"></i>Customers</a></li>
