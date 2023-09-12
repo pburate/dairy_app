@@ -8,7 +8,6 @@
                       <li><a href="<?= base_url('CountersController') ?>">Counters</a></li>
                       <li><a href="<?= base_url('ProductsController') ?>">Products</a></li>\
                       <li><a href="<?= base_url('TaxesController') ?>">Taxes</a></li>
-                      <li><a href="<?= base_url('CustomersController') ?>">Customers</a></li>
                     </ul>
                   </li>
     <!-- <li><a><i class="fa fa-table"></i>Settings</a> -->
