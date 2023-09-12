@@ -83,7 +83,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      Do you want to delete ?
+      Are you sure you want to delete this tax ?
       </div>
       <div class="modal-footer">
         <a  href="<?= base_url('TaxesController/delete_tax/').$item['tax_info_id'] ?>" class="btn btn-success">Yes</a>
