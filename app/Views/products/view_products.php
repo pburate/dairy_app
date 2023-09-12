@@ -39,6 +39,7 @@
                 <th> Categories</th>
                 <th> Weight</th>
                 <th> Unit</th>
+                <th> Price Before Tax</th>
                 <th> Tax Amount</th>
                 <th>Selling Price With Tax</th>
                 <th class="column-title ">Edit</th>
@@ -63,7 +64,11 @@
                                 <?= $item['weight'] ?>
                             </td><td>
                                 <?= $item['unit'] ?>
-                            </td><td>
+                            </td>
+                            <td>
+                                <?= $item['price_before_tax'] ?>
+                            </td><
+                            <td>
                                 <?= $item['tax_amount'] ?>
                             </td>
                             <td>

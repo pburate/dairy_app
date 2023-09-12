@@ -7,7 +7,7 @@ $(document).ready(function () {
      $("#product_name").keyup(function () {
       validate_product_name();
      });
-     var product_name_regex = /^[A-Za-z]+$/;
+     var product_name_regex = /^[A-Za-z ]+$/;
 
      function validate_product_name() {
          let product_name = $("#product_name").val();
@@ -81,6 +81,43 @@ $(document).ready(function () {
          
      });
  
+
+       //validation for price before tax
+
+       $("#price_before_tax").keyup(function () {
+        validate_price_before_tax();
+       });
+       var price_before_tax_regex = /^[-+]?[0-9]*\.?[0-9]+$/;
+   
+       function validate_price_before_tax() {
+           let price_before_tax = $("#price_before_tax").val();
+           if (!price_before_tax.match(price_before_tax_regex) || price_before_tax.length==0) {
+              $("#valid_price_before_tax").html("Please enter a valid price before tax");
+               check=false;
+               return false;
+           }
+           else {
+              $("#valid_price_before_tax").html('');
+              check=true;
+           }
+         
+       }
+   
+       $('#form_submit_btn').click(function()
+       {
+          //  check=true;           
+          validate_price_before_tax();
+           
+           if(check==true)
+           {
+               return true;
+           }
+           else
+           {
+               return false;
+           }
+           
+       });
 
 //validation for product tax amount
      $("#product_tax_amount").keyup(function () {

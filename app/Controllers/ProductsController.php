@@ -30,6 +30,7 @@ class ProductsController extends BaseController{
             'product_category' => $this->request->getPost('product_category'),
             'weight' => $this->request->getPost('product_weight'),
             'unit' => $this->request->getPost('product_unit'),
+            'price_before_tax' => $this->request->getPost('price_before_tax'),
             'selling_price_including_tax' => $this->request->getPost('selling_price_including_tax'),
             'tax_amount' => $this->request->getPost('product_tax_amount'),
         ];
@@ -67,6 +68,7 @@ $session->setFlashdata('status', 'Product deleted Successfully !');
             'product_category'  => $this->request->getPost('product_category'),
             'weight'  => $this->request->getPost('product_weight'),
             'unit'  => $this->request->getPost('product_unit'),
+            'price_before_tax' => $this->request->getPost('price_before_tax'),
             'selling_price_including_tax'  => $this->request->getPost('selling_price_including_tax'),
             'tax_amount'  => $this->request->getPost('product_tax_amount'),
         ];

@@ -91,6 +91,18 @@
                                             </div>
                                         </div>
 
+                                          <!-- product before tax -->
+                                          <div class="item form-group">
+                                        <label class="col-form-label col-md-3 col-sm-3 label-align float-left" for="price_before_tax"> Price Before Tax</label><span class="required"></span>
+											</label>
+                                            <div class="col-md-4 col-sm-4">
+                                            <input type="text" class="form-control form-control-sm" id="price_before_tax" name="price_before_tax" rows="3" placeholder="Price Before Tax" required  value="<?= $products['price_before_tax'] ?>" >
+                                            <span id="valid_price_before_tax"
+                                        class="text-danger md-3"></span>
+                                          </div>
+                                        </div>
+
+
                                          <!-- product tax amount -->
                                          <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="product_tax_amount">Tax Amount</label><span class="required"></span>
