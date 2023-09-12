@@ -15,24 +15,12 @@
       <li><a href="<?= base_url('CustomersController') ?>"> <i class="fa fa-user aero"></i>Customers</a></li>
       <!-- <a href=""></a> -->
       <li><a href="#"><i class="glyphicon glyphicon-trash"></i> Wastage</a></li>
-
-      <li><a href="#"><i class="fa fa-desktop"></i>Delivery Note</a>
-      </li>
-
-     
-      <li><a href="#"><i class="fa fa-desktop"></i>Billing</a>
-      </li>
-
-      <li><a href="#"><i class="fa fa-desktop"></i>Payments</a>
-      </li>
-
-      <li><a href="#"><i class="fa fa-desktop"></i>Reports</a>
-      </li>
-</li>
-
+      <li><a href="#"><i class="fa fa-desktop"></i>Delivery Note</a></li>
+      <li><a href="#"><i class="fa fa-desktop"></i>Billing</a></li>
+      <li><a href="#"><i class="fa fa-desktop"></i>Payments</a></li>
+      <li><a href="#"><i class="fa fa-desktop"></i>Reports</a></li>
     </ul>
   </div>
 </div>
 </div>
 </div>
-
