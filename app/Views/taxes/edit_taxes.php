@@ -30,14 +30,14 @@
 									<br />
 
 									<form class="form form-label" name="myform" action="<?= base_url('TaxesController/update_tax') ?>" method="post" onsubmit="return add_validations()">
-                                    <input type="hidden" name="tax_info_id" value="<?= $taxes['tax_info_id'] ?>" >
+                                    <input type="hidden" name="tax_info_id" value="<?= $taxes['tax_id'] ?>" >
                                            
                                         <!-- Tax name -->
 										<div class="item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3 label-align float-left" for="tax_name"> Tax Name</label><span class="required"></span>
 											</label>
                                             <div class="col-md-4 col-sm-4">
-                                            <input type="text" class="form-control form-control-sm" id="tax_name" name="tax_name" value="<?= $taxes['tax_name'] ?>" rows="3" placeholder=" Tax Name" required>
+                                            <input type="text" class="form-control form-control-sm" id="tax_name" name="tax_name" value="<?= $taxes['tax_name'] ?>" rows="3" placeholder=" Tax Name" required readonly>
                                             <span id="valid_tax_name"
                                         class="text-danger md-3"></span>
                                           </div>

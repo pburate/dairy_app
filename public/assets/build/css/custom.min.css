@@ -6214,5 +6214,9 @@ ul.notifications {
 	margin-top: 20px;
 }
 .btn{
+	font-size:12px;	
+}
+
+::placeholder{
 	font-size:12px;
 }

@@ -67,7 +67,7 @@
                                 <?= $item['hsn_code'] ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('TaxesController/edit_tax/').$item['tax_info_id'] ?>" class="btn btn-success">Edit</a>
+                                <a href="<?= base_url('TaxesController/edit_tax/').$item['tax_id'] ?>" class="btn btn-success">Edit</a>
             </td>
             <td>
                                 <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
@@ -86,7 +86,7 @@
       Are you sure you want to delete this tax ?
       </div>
       <div class="modal-footer">
-        <a  href="<?= base_url('TaxesController/delete_tax/').$item['tax_info_id'] ?>" class="btn btn-success">Yes</a>
+        <a  href="<?= base_url('TaxesController/delete_tax/').$item['tax_id'] ?>" class="btn btn-success">Yes</a>
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
        
       </div>

@@ -36,7 +36,7 @@ class ProductsController extends BaseController{
         print_r($data);
         $product_model->save($data);
 
-$session->setFlashdata('status', 'Product has inserted Successfully');
+$session->setFlashdata('status', 'Product inserted Successfully !');
         return $this->response->redirect(base_url('/ProductsController'));
     }
 
@@ -46,7 +46,7 @@ $session->setFlashdata('status', 'Product has inserted Successfully');
         $session = \Config\Services::session();
         $product_model = new ProductsModel();
             $product_model->delete($id);
-$session->setFlashdata('status', 'Product has deleted Successfully');
+$session->setFlashdata('status', 'Product deleted Successfully !');
         return $this->response->redirect(base_url('/ProductsController'));
     }
 
@@ -71,7 +71,7 @@ $session->setFlashdata('status', 'Product has deleted Successfully');
             'tax_amount'  => $this->request->getPost('product_tax_amount'),
         ];
         $product_model->update($id, $data);
-$session->setFlashdata('status', 'Product has updated Successfully');
+$session->setFlashdata('status', 'Product updated Successfully !');
         return $this->response->redirect(base_url('/ProductsController'));
     }
 }

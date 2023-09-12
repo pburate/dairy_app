@@ -37,7 +37,7 @@
                                     <input type="text"
                                         class="form-control form-control-sm float-end"
                                         id="tax_name" name="tax_name" rows="3"
-                                        placeholder="Tax Name" required>
+                                        placeholder="Tax Name" required value="gst" readonly>
                                     <span id="valid_tax_name"
                                         class="text-danger md-3"></span>
                                 </div>
