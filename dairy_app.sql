@@ -349,4 +349,4 @@ CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , 
 
 
 -- 12-09-2023 Prachi
-CREATE TABLE `dairy_app`.`tax_info` ( `tax_info_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `is_deleted` TINYINT(4) NOT NULL , `deleted_at` DATETIME NOT NULL, `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_info_id`)) ENGINE = InnoDB;
+CREATE TABLE `dairy_app`.`tax_info` ( `tax_info_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `deleted_at` DATETIME NOT NULL, `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_info_id`)) ENGINE = InnoDB;
