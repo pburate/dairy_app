@@ -37,9 +37,9 @@
               <tr class="headings">
                 <th class="column-title">Products</th>
                 <th> Categories</th>
-                <th> weight</th>
+                <th> Weight</th>
                 <th> Unit</th>
-                <th> tax Amount</th>
+                <th> Tax Amount</th>
                 <th>Selling Price With Tax</th>
                 <th class="column-title ">Edit</th>
                 <th class="column-title ">Delete</th>
