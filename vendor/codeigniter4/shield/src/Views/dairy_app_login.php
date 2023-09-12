@@ -36,7 +36,7 @@
               </div>
               <div>
                 
-                <button type="submit" class="btn">Log in</button>
+                <button type="submit" class="btn btn-outline-info">Log in</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
