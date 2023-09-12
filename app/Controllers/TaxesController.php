@@ -35,7 +35,7 @@ class TaxesController extends BaseController{
             'hsn_code' => $this->request->getPost('hsn_code'),
         ];
         $taxes_model->save($data);
-$session->setFlashdata('status', 'Tax has inserted Successfully');
+$session->setFlashdata('status', 'Tax inserted Successfully !');
         return $this->response->redirect(base_url('/TaxesController'));
     }
 
@@ -45,7 +45,7 @@ $session->setFlashdata('status', 'Tax has inserted Successfully');
         $taxes_model = new TaxesModel();
         $session = \Config\Services::session();
          $taxes_model->delete($id);
-$session->setFlashdata('status', 'Tax has deleted Successfully');
+$session->setFlashdata('status', 'Tax deleted Successfully !');
 return $this->response->redirect(base_url('/TaxesController'));
 
     }
@@ -69,7 +69,7 @@ return $this->response->redirect(base_url('/TaxesController'));
             'hsn_code' => $this->request->getPost('hsn_code'),
         ];
         $taxes_model->update($id, $data);
-$session->setFlashdata('status', 'Tax has updated Successfully');
+$session->setFlashdata('status', 'Tax updated Successfully !');
         return $this->response->redirect(base_url('/TaxesController'));
     }
 }
