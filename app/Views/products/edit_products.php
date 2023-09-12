@@ -54,7 +54,7 @@
                                         if($products["product_category"]!= "Regular" ) { ?>
                                                 <option>Regular</option>
                                                 <?php } else{?>
-                                                    <option>Seosonal</option>
+                                                    <option>Seasonal</option>
                                                     <?php }?>
                                             </select>
                                             </div>
