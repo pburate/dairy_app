@@ -30,7 +30,7 @@
 									<br />
 
 									<form class="form form-label" name="myform" action="<?= base_url('TaxesController/update_tax') ?>" method="post" onsubmit="return add_validations()">
-                                    <input type="hidden" name="tax_info_id" value="<?= $taxes['tax_info_id'] ?>" >
+                                    <input type="hidden" name="tax_info_id" value="<?= $taxes['tax_id'] ?>" >
                                            
                                         <!-- Tax name -->
 										<div class="item form-group">
