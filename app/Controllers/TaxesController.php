@@ -45,7 +45,7 @@ $session->setFlashdata('status', 'Tax has inserted Successfully');
         $taxes_model = new TaxesModel();
         $session = \Config\Services::session();
         $is_deleted = 1;
-        $db      = \Config\Database::connect();
+        $db = \Config\Database::connect();
         $builder = $db->table('tax_info');
         $builder->set("is_deleted",$is_deleted);
         $builder->where("tax_info_id",$id);
