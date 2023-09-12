@@ -36,7 +36,7 @@
               </div>
               <div>
                 
-                <button type="submit" class="btn btn-outline-info">Log in</button>
+                <button type="submit" class="btn" style="background-color: #0d4073 ; color:white; font-size:12px;">Log in</button>
                 <a class="reset_pass" href="#">Lost your password?</a>
               </div>
 
