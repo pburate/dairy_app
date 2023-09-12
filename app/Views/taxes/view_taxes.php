@@ -70,7 +70,7 @@
                                 <a href="<?= base_url('TaxesController/edit_tax/').$item['tax_info_id'] ?>" class="btn btn-success">Edit</a>
             </td>
             <td>
-                                <a  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
                             </td>
 
 
