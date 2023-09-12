@@ -11,11 +11,8 @@
 
 <!-- page content -->
 
-<?php 
-   foreach($query as $row){
-?>
-  <h1><?= $row["tax_info_id"]?></h1>
-<?php }?>
+
+
 <div class="right_col" role="main">
   <div class="">
     <div class="row" style="display: block;">
@@ -108,8 +105,6 @@
   </div>
   
 </div>
-
-
 
 
 <!-- /page content -->
