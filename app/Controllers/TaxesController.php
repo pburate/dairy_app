@@ -50,11 +50,10 @@ $session->setFlashdata('status', 'Tax has inserted Successfully');
         $builder->set("is_deleted",$is_deleted);
         $builder->where("tax_info_id",$id);
         $builder->update();
-
-        // $taxes_model->delete($id);
-        
+         $taxes_model->delete($id);
 $session->setFlashdata('status', 'Tax has deleted Successfully');
 return $this->response->redirect(base_url('/TaxesController'));
+
     }
 
     public function edit_tax($id){

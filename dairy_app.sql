@@ -348,5 +348,5 @@ ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_i
 CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL , `product_category` VARCHAR(100) NOT NULL , `weight` DOUBLE NOT NULL , `unit` VARCHAR(500) NOT NULL , `selling_price_including_tax` DOUBLE NOT NULL , `tax_amount` DOUBLE NOT NULL , PRIMARY KEY (`product_id`)) ENGINE = InnoDB;
 
 
--- 08-09-2023 Prachi
-CREATE TABLE `dairy_app`.`tax_info` ( `tax_info_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `is_deleted` TINYINT(4) NOT NULL , `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_info_id`)) ENGINE = InnoDB;
+-- 12-09-2023 Prachi
+CREATE TABLE `dairy_app`.`tax_info` ( `tax_info_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `is_deleted` TINYINT(4) NOT NULL , `deleted_at` DATETIME NOT NULL, `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_info_id`)) ENGINE = InnoDB;
