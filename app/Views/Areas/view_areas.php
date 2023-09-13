@@ -21,12 +21,19 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
+            <?php $session = \Config\Services::session();
+            if ($session->getFlashdata('status')):?>
+
+              <div class="alert alert-success" id="alert">
+                <?= $session->getFlashdata('status') ?>
+              </div>
+            <?php endif; ?>
             <h2>Areas</h2>
             <div class="clearfix"></div>
           </div>
           <!-- <div class="mb-"></div> -->
           <div class="d-flex justify-content-end">
-            <a href="<?= base_url('AreasController/add_areas')?>" class="btn btn-primary">Add Area</a>
+            <a href="<?= base_url('AreasController/add_areas') ?>" class="btn btn-primary">Add Area</a>
           </div>
           <table id="myTable" class="">
             <thead>
@@ -49,8 +56,8 @@
                   <td>
                     <a href="<?= base_url('AreasController/edit_areas/') . $item['area_id'] ?>"
                       class="btn btn-success">Edit</a>
-                      </td>
-                      <td>
+                  </td>
+                  <td>
                     <button type="button" class="btn btn-danger" id="delete_btn" value="<?= $item['area_id'] ?>">
                       Delete
                     </button>
@@ -75,7 +82,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete Areas</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delete Area</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -101,6 +108,12 @@
 
 <script>
 
+
+// setTimeout(() => {
+//   const alert = document.getElementById('alert');
+//   alert.style.display = 'none';
+// }, 2000);
+
   //  to delee the data and 
   $(document).ready(function () {
     $(document).on('click', '#delete_btn', function () {
@@ -110,7 +123,7 @@
       $('#deleteModal').modal('show');
     });
   });
-  
+
 
   $(document).on('click', '.areas_yes_btn', function () {
     var area_id = $('#hidden_delete_id').val();

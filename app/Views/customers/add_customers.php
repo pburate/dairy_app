@@ -27,7 +27,7 @@
 					<div class="x_content">
 						<br />
 						<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
-							action="<?= base_url('CustomersController/store_customers') ?>" method="post">
+							action="<?= base_url('CustomersController/store_customers') ?>" method="post" onsubmit="return customer_submit()">
 
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customer's
@@ -36,7 +36,7 @@
 								<div class="col-md-4 col-sm-4">
 									<input type="text" id="full_name" name="customer[full_name]" required="required"
 										class="form-control " placeholder="Enter Full Name">
-										<span id="check_full_name" class="text-danger row font-weight-bold"></span>
+									<span id="check_full_name" class="text-danger row font-weight-bold"></span>
 
 								</div>
 							</div>
@@ -47,8 +47,8 @@
 								</label>
 								<div class="col-md-4 col-sm-4">
 									<input type="number" id="phone" name="customer[phone]" required="required"
-										class="form-control " placeholder="Enter Phone Number" >
-										<span id="check_phone" class="text-danger row font-weight-bold"></span>
+										class="form-control " placeholder="Enter Phone Number">
+									<span id="check_phone" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 							<div class="item form-group">
@@ -58,7 +58,7 @@
 								<div class="col-md-4 col-sm-4">
 									<input type="number" id="whatsapp" name="customer[whatsapp]" required="required"
 										class="form-control " placeholder="Enter Whatsapp Number ">
-										<span id="check_whatsapp" class="text-danger row font-weight-bold"></span>
+									<span id="check_whatsapp" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -69,19 +69,45 @@
 								<div class="col-md-4 col-sm-4">
 									<input type="email" id="email" name="customer[email]" required="required"
 										class="form-control " placeholder="Enter Email">
-										<span id="check_email" class="text-danger row font-weight-bold"></span>
+									<span id="check_email" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
+							<div class="item form-group">
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_id">Product<span
+										class="required"></span>
+								</label>
+								<div class="col-md-4 col-sm-4">
+									<select class="form-control" name="customer_monthly_details[prodcut_id]" id="prodcut_name"
+										for="prodcut_id">
+										<!-- <option value=""></option> -->
+										<option selected>Select Product</option>
+										<?php foreach ($products as $item): ?>
+											<option value="<?= $item['product_id'] ?>" class="form-select"><?= $item['product_name'] ?></option>
+										<?php endforeach ?>
+									</select>
+									<span id="check_prodcut_name" class=" parsley-error text-danger row font-weight-bold"></span>
+								</div>
+							</div>
+							<div class="item form-group">
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="quantity">Quantity<span
+										class="required"></span>
+								</label>
+								<div class="col-md-4 col-sm-4">
+									<input type="text" id="quantity" name="customer_monthly_details[quantity]" class="form-control "
+										placeholder="Quantity">
+									<span id="check_quantity" class="text-danger row font-weight-bold"></span>
+								</div>
+							</div>
+
 
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align" for="address">Address<span
 										class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<textarea class="form-control" id="address" name="customer[address]" rows="2" 
-									placeholder="Etner Address"
-										required></textarea>
-										<span id="check_address" class="text-danger row font-weight-bold"></span>
+									<textarea class="form-control" id="address" name="customer[address]" rows="2"
+										placeholder="Etner Address" required></textarea>
+									<span id="check_address" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -90,15 +116,15 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<select class="form-select" tabindex="-1" name="customer[area_id]"
-										id="area_name" for="area_id">
+									<select class="form-control" name="customer[area_id]" id="area_name" for="area_id">
 										<!-- <option value=""></option> -->
 										<option selected>Select Area</option>
 										<?php foreach ($areas as $item): ?>
 											<option value="<?= $item['area_id'] ?>" class="form-select"><?= $item['area_name'] ?></option>
 										<?php endforeach ?>
 									</select>
-									<span id="check_area_name" class=" parsley-error text-danger row font-weight-bold"></span>
+									<span id="check_area_name"
+										class=" parsley-error text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -107,9 +133,9 @@
 										class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<input type="text" id="latitude" name="customer[latitude]"
-										class="form-control " placeholder="Latitude">
-										<span id="check_latitude" class="text-danger row font-weight-bold"></span>
+									<input type="text" id="latitude" name="customer[latitude]" class="form-control "
+										placeholder="Latitude">
+									<span id="check_latitude" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 
@@ -118,11 +144,12 @@
 									for="longitude">Longitude<span class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<input type="text" id="longitude" name="customer[longitude]"
-										class="form-control " placeholder="Longitude">
-										<span id="check_longitude" class="text-danger row font-weight-bold"></span>
+									<input type="text" id="longitude" name="customer[longitude]" class="form-control "
+										placeholder="Longitude">
+									<span id="check_longitude" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>
+							
 							<div class="ln_solid"></div>
 							<div class="item form-group">
 								<div class="col-md-6 col-sm-6 offset-md-3">

@@ -22,7 +22,7 @@ class AreasController extends BaseController
 
     public function store_areas()
     {
-
+        $session = \Config\Services::session();
         $areas_model = new AreasModel();
         $data = [
             'area_name' => $this->request->getVar('area_name'),
@@ -30,6 +30,7 @@ class AreasController extends BaseController
             'created_at' => Time::now('Asia/Kolkata', 'en_US'),
         ];
         $areas_model->insert($data);
+        $session->setFlashdata('status', 'Product has inserted Successfully');
         return $this->response->redirect(base_url('/AreasController'));
     }
 
@@ -48,6 +49,7 @@ class AreasController extends BaseController
             'updated_at' => Time::now('Asia/Kolkata', 'en_US'),
         ];
         $areas_model->update($id, $data);
+        // $session->setFlashdata('status', 'Product has updated Successfully');
         return $this->response->redirect(base_url('/AreasController'));
     }
 
@@ -56,6 +58,7 @@ class AreasController extends BaseController
         $areas_model = new AreasModel();
 
         $areas_model->delete($this->request->getVar('area_id'));
+        // $session->setFlashdata('status', 'Product has deleted Successfully');
         $message = ['status' => 'Deleted'];
         return $this->response->setJSON($message);
     }
@@ -64,11 +67,13 @@ class AreasController extends BaseController
     {
         $areas_model = new AreasModel();
         $area=$this->request->getVar('area');
-        
+
         $area_check = $areas_model->where('area_name', $area)->first();
-       if(is_array($area_check) && count($area_check)>0){
-        $message = ['status' => 'Duplicate'];
-       }else{
+       if(count($area_check)>0){
+        $message = ['status' => 'Duplicate '];
+        // return false;
+       }
+       else{
         $message = ['status' => 'NoDuplicate'];
        } 
         return $this->response->setJSON($message);

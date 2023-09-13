@@ -66,5 +66,6 @@
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
 <script>
 	 var base_url = "<?= base_url() ?>";
+        //  alert(base_url);
 </script>
 <script src="<?= base_url('/public/assets/validations/areas/areas_validations.js') ?>"></script>

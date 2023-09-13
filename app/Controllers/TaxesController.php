@@ -1,24 +1,26 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\TaxesModel;
- 
-class TaxesController extends BaseController{
-   
-    public function index(){
+
+class TaxesController extends BaseController
+{
+
+    public function index()
+    {
 
         if (auth()->loggedIn()) {
-              $taxes_model = new TaxesModel();
-              $data['taxes'] = $taxes_model->findAll();  
+            $taxes_model = new TaxesModel();
+            $data['taxes'] = $taxes_model->findAll();
             //   print_r($data);
-        return view("taxes/view_taxes",$data);
-       }
-       else {
-              return redirect()->to('/login');
-          }
-       }
+            return view("taxes/view_taxes", $data);
+        } else {
+            return redirect()->to('/login');
+        }
+    }
 
-       //add tax
+    //add tax
     public function add_taxes()
     {
         return view('taxes/add_taxes');
@@ -41,7 +43,8 @@ $session->setFlashdata('status', 'Tax inserted Successfully !');
 
     //delete tax
 
-    public function delete_tax($id){
+    public function delete_tax($id)
+    {
         $taxes_model = new TaxesModel();
         $session = \Config\Services::session();
          $taxes_model->delete($id);
@@ -50,14 +53,16 @@ return $this->response->redirect(base_url('/TaxesController'));
 
     }
 
-    public function edit_tax($id){
+    public function edit_tax($id)
+    {
         $taxes_model = new TaxesModel();
         $data['taxes'] = $taxes_model->find($id);
-        return view('taxes/edit_taxes',$data);
+        return view('taxes/edit_taxes', $data);
     }
 
     //Edit tax
-    public function update_tax(){
+    public function update_tax()
+    {
         $taxes_model = new TaxesModel();
         $session = \Config\Services::session();
 
