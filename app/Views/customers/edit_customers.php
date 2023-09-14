@@ -25,11 +25,14 @@
 					</div>
 					<div class="x_content">
 						<br />
-						<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+						<form id="customer_form" data-parsley-validate class="form-horizontal form-label-left"
 							action="<?= base_url('CustomersController/update_customers') ?>" method="post"  onsubmit="return customer_submit()">
 
 							<input type="hidden" class="form-control" id="customer_id" name="customer_id"
 								value="<?= $customers['customer_id'] ?>">
+
+								<input type="hidden" class="form-control" id="monthly_delivery_id" name="monthly_delivery_id"
+								value="<?= $customer_monthly_delivery['monthly_delivery_id'] ?>">
 
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customer's
@@ -74,16 +77,30 @@
 								</div>
 							</div>
 
+							<div class="item form-group">
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="product_id">Product<span
+										class="required"></span>
+								</label>
+								<div class="col-md-4 col-sm-4">
+									<select class="form-control" name="customer_monthly_details[product_id]" id="prodcut_name"
+										for="prodcut_id" 	 value="<?= $customer_monthly_delivery['product_id'] ?>"> 
+										<?php foreach ($products as $item): ?>
+											<option <?php if ($customer_monthly_delivery['product_id'] === $item['product_id']): ?>selected<?php endif; ?>
+												 value="<?= $item['product_id']; ?>">
+												<?= $item['product_name']; ?>
+											</option>
+											<?php endforeach ?>
+									</select>
+									<span id="check_prodcut_name" class=" parsley-error text-danger row font-weight-bold"></span>
+								</div>
+							</div>
 							
-
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align" for="quantity">Quantity<span
 										class="required"></span>
 								</label>
-								<!-- value="<?//= $customers['quantity'] ?> " -->
 								<div class="col-md-4 col-sm-4">
-									<input type="text" id="quantity" name="customer[quantity]" class="form-control "
-										 >
+									<input type="text" id="quantity" name="customer_monthly_details[quantity]" class="form-control" value="<?= $customer_monthly_delivery['quantity'] ?>" >
 									<span id="check_quantity" class="text-danger row font-weight-bold"></span>
 								</div>
 							</div>

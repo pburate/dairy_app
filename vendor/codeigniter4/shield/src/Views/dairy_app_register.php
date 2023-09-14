@@ -2,6 +2,19 @@
 
 
 <body class="login">
+
+    <div>
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                <form action="<?= url_to('register') ?>" method="post">
+                    <?= csrf_field() ?>
+
+                        <div id="register">
+                            <section class="login_content">
+                                <form>
+                                    <h1>Create Account</h1>
+                                    <div>
 <?php if (session('error') !== null) : ?>
                     <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
                 <?php elseif (session('errors') !== null) : ?>
@@ -16,17 +29,7 @@
                         <?php endif ?>
                     </div>
                 <?php endif ?>
-    <div>
-        <div class="login_wrapper">
-            <div class="animate form login_form">
-                <section class="login_content">
-                <form action="<?= url_to('register') ?>" method="post">
-                    <?= csrf_field() ?>
-
-                        <div id="register">
-                            <section class="login_content">
-                                <form>
-                                    <h1>Create Account</h1>
+                </div>
                                    <!-- Email -->
                     <div class="form-floating mb-2">
                     <!-- <label for=""><?//= lang('Auth.email') ?></label> -->

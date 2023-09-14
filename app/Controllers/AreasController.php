@@ -30,7 +30,7 @@ class AreasController extends BaseController
             'created_at' => Time::now('Asia/Kolkata', 'en_US'),
         ];
         $areas_model->insert($data);
-        $session->setFlashdata('status', 'Product has inserted Successfully');
+        $session->setFlashdata('status', 'Area inserted Successfully');
         return $this->response->redirect(base_url('/AreasController'));
     }
 
@@ -42,6 +42,7 @@ class AreasController extends BaseController
     }
     public function update_areas()
     {
+        $session = \Config\Services::session();
         $areas_model = new AreasModel();
         $id = $this->request->getVar('area_id');
         $data = [
@@ -49,16 +50,18 @@ class AreasController extends BaseController
             'updated_at' => Time::now('Asia/Kolkata', 'en_US'),
         ];
         $areas_model->update($id, $data);
-        // $session->setFlashdata('status', 'Product has updated Successfully');
+        $session->setFlashdata('status', 'Area updated Successfully');
         return $this->response->redirect(base_url('/AreasController'));
     }
 
     public function delete_areas()
     {
+        $session = \Config\Services::session();
+
         $areas_model = new AreasModel();
 
         $areas_model->delete($this->request->getVar('area_id'));
-        // $session->setFlashdata('status', 'Product has deleted Successfully');
+        $session->setFlashdata('status', 'Area deleted Successfully');
         $message = ['status' => 'Deleted'];
         return $this->response->setJSON($message);
     }

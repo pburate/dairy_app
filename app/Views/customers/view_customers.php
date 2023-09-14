@@ -21,6 +21,13 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
+          <?php $session = \Config\Services::session();
+            if ($session->getFlashdata('status')):?>
+
+              <div class="alert alert-success" id="alert">
+                <?= $session->getFlashdata('status') ?>
+              </div>
+            <?php endif; ?>
             <h2>Customers</h2>
             <div class="clearfix"></div>
           </div>
@@ -35,6 +42,8 @@
                 <th class="column-title">Phone</th>
                 <th class="column-title">Email</th>
                 <th class="column-title">Address</th>
+                <th class="column-title">Product</th>
+                <th class="column-title">Quantity</th>
                 <th class="column-title">Area</th>
                 <th class="column-title">Whatsapp</th>
                 <th class="column-title">Edit</th>
@@ -56,6 +65,12 @@
                   </td>
                   <td>
                     <?= $item['address'] ?>
+                  </td>
+                  <td>
+                    <?= $item['product_name'] ?>
+                  </td>
+                  <td>
+                    <?= $item['quantity'] ?>
                   </td>
                   <td>
                     <?= $item['area_name'] ?>
@@ -98,7 +113,7 @@
       </div>
       <div class="modal-body">
         <input type="hidden" id="hidden_delete_id">
-        Do you want to delete?
+        Are you sure you want to delete this customer
       </div>
       <div class="modal-footer">
 
@@ -117,6 +132,12 @@
 
 <script>
 
+
+setTimeout(() => {
+    const alert = document.getElementById('alert');
+    alert.style.display = 'none';
+  }, 2000);
+  
   //  to delee the data and 
   $(document).ready(function () {
     $(document).on('click', '#delete_btn', function () {

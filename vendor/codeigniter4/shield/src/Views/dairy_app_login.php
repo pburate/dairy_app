@@ -4,6 +4,14 @@
     
     <div>
     
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          
+          <section class="login_content">
+          <form action="<?= url_to('login') ?>" method="post">
+                    <?= csrf_field() ?>
+              <h1>Login</h1>
+              <div>
     <?php if (session('error') !== null) : ?>
                     <div class="alert alert-danger" role="alert"><?= session('error') ?></div>
                 <?php elseif (session('errors') !== null) : ?>
@@ -22,12 +30,7 @@
                 <?php if (session('message') !== null) : ?>
                 <div class="alert alert-success" role="alert"><?= session('message') ?></div>
                 <?php endif ?>
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <section class="login_content">
-          <form action="<?= url_to('login') ?>" method="post">
-                    <?= csrf_field() ?>
-              <h1>Login</h1>
+                </div>
               <div>
                 <input type="text" class="form-control" placeholder="Email Address"  name="email" required="" />
               </div>

@@ -34,7 +34,7 @@
 									for="counters_name">Counter<span class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<input type="text" id="counter_name" name="counter_name" required  pattern="[A-Za-z]{3}"
+									<input type="text" id="counter_name" name="counter_name" required 
 										class="form-control "placeholder="Counter Name">
 									<span id="check_counter_name" class="text-danger row font-weight-bold"></span>
 								</div>

@@ -26,8 +26,8 @@
 					</div>
 					<div class="x_content">
 						<br />
-						<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
-							action="<?= base_url('CustomersController/store_customers') ?>" method="post" onsubmit="return customer_submit()">
+						<form id="customer_form" data-parsley-validate class="form-horizontal form-label-left"
+							action="<?= base_url('CustomersController/store_customers') ?>" method="post">
 
 							<div class="item form-group">
 								<label class="col-form-label col-md-3 col-sm-3 label-align" for="full_name">Customer's
@@ -73,19 +73,18 @@
 								</div>
 							</div>
 							<div class="item form-group">
-								<label class="col-form-label col-md-3 col-sm-3 label-align" for="area_id">Product<span
+								<label class="col-form-label col-md-3 col-sm-3 label-align" for="product_id">Product<span
 										class="required"></span>
 								</label>
 								<div class="col-md-4 col-sm-4">
-									<select class="form-control" name="customer_monthly_details[prodcut_id]" id="prodcut_name"
+									<select class="form-control" name="customer_monthly_details[product_id]" id="product_name"
 										for="prodcut_id">
-										<!-- <option value=""></option> -->
 										<option selected>Select Product</option>
 										<?php foreach ($products as $item): ?>
 											<option value="<?= $item['product_id'] ?>" class="form-select"><?= $item['product_name'] ?></option>
 										<?php endforeach ?>
 									</select>
-									<span id="check_prodcut_name" class=" parsley-error text-danger row font-weight-bold"></span>
+									<span id="check_product_name" class=" parsley-error text-danger row font-weight-bold"></span>
 								</div>
 							</div>
 							<div class="item form-group">

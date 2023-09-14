@@ -21,6 +21,13 @@
       <div class="col-md-12 col-sm-12  ">
         <div class="x_panel">
           <div class="x_title">
+          <?php $session = \Config\Services::session();
+            if ($session->getFlashdata('status')):?>
+
+              <div class="alert alert-success" id="alert">
+                <?= $session->getFlashdata('status') ?>
+              </div>
+            <?php endif; ?>
             <h2>Counters</h2>
             <div class="clearfix"></div>
           </div>
@@ -69,4 +76,11 @@
 
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
+<script>
+  
+  setTimeout(() => {
+    const alert = document.getElementById('alert');
+    alert.style.display = 'none';
+  }, 2000);
+</script>
 

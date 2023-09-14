@@ -89,7 +89,7 @@
       </div>
       <div class="modal-body">
         <input type="hidden" id="hidden_delete_id">
-        Do you want to delete ?
+        Are you sure you want to delete this area
       </div>
       <div class="modal-footer">
 
@@ -108,11 +108,10 @@
 
 <script>
 
-
-// setTimeout(() => {
-//   const alert = document.getElementById('alert');
-//   alert.style.display = 'none';
-// }, 2000);
+setTimeout(() => {
+  const alert = document.getElementById('alert');
+  alert.style.display = 'none';
+}, 2000);
 
   //  to delee the data and 
   $(document).ready(function () {
