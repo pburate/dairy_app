@@ -1,25 +1,27 @@
 
 
 $(document).ready(function () {
-    var check = true;
- 
- 
-     $("#counter_name").keyup(function () {
+    var flag = true;
+    var counter_name_regex = /[^A-Za-z]$/;
+   
+   
+     $("#counter_name").on('input',function () {
+        var counter_name = $("#counter_name").val().replace(counter_name_regex,'')
+        $("#counter_name").val(counter_name);
          validate_counters_name();
      });
-     var counter_name_regex = /^[A-Za-z ]{3,}$/;
  
      function validate_counters_name() {
          let counter = $("#counter_name").val();
 
          if (!counter.match(counter_name_regex) || counter.lenght==0) {
             $("#check_counter_name").html("Please enter a valid counter name");
-             check=false;
+             flag=false;
              return false;
          }
          else {
             $("#check_counter_name").html('');
-            check=true;
+            flag=true;
          }
        
      }
@@ -36,12 +38,12 @@ $(document).ready(function () {
 
         if (!counter.match(counter_value_regex) || counter.lenght==0) {
            $("#check_counter_value").html("Please enter a valid counter value");
-            check=false;
+            flag=false;
             return false;
         }
         else {
            $("#check_counter_value").html('');
-           check=true;
+           flag=true;
         }
       
     }
@@ -49,11 +51,12 @@ $(document).ready(function () {
 
     $('#form_submit_btn').click(function()
     {
-       //  check=true;          
+       //  flag=true;          
          validate_counters_name();
+         flag=false;
          validate_counters_value();
          
-         if(check==true)
+         if(flag==true)
          {
              return true;
          }

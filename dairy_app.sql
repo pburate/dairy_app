@@ -357,3 +357,5 @@ ALTER TABLE `customer_monthly_delivery` ADD CONSTRAINT `product_id_foregin_key` 
 -- 16-09-2023 piyush
 
 CREATE TABLE `dairy_app`.`wastage` (`wastage_id` INT(11) NOT NULL AUTO_INCREMENT , `product_id` INT(11) NOT NULL , `quantity` FLOAT NOT NULL , `wastage_date` DATETIME NULL DEFAULT NULL , `location` VARCHAR(45) NOT NULL , `reason` VARCHAR(100) NOT NULL , PRIMARY KEY (`wastage_id`)) ENGINE = InnoDB;
+ALTER TABLE `wastage` ADD CONSTRAINT `wastage_product_id_foregin_key` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
