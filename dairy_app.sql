@@ -345,12 +345,6 @@ CREATE TABLE `dairy_app`.`customer` (`customer_id` INT(11) NOT NULL AUTO_INCREME
 ALTER TABLE `customer` ADD CONSTRAINT `area_id_foregin_key` FOREIGN KEY (`area_id`) REFERENCES `area`(`area_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 
--- 12-09-2023 Prachi
-CREATE TABLE `dairy_app`.`tax` ( `tax_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `deleted_at` DATETIME NOT NULL, `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_id`)) ENGINE = InnoDB;
-
-
--- 12-09-2023 Prachi 
-CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL ,`product_category` VARCHAR(100) NOT NULL , `weight` DOUBLE NOT NULL , `unit` VARCHAR(500) NOT NULL , `price_before_tax` DOUBLE NOT NULL,`selling_price_including_tax` DOUBLE NOT NULL , `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME NOT NULL, `tax_amount` DOUBLE NOT NULL , PRIMARY KEY (`product_id`)) ENGINE = InnoDB;
 CREATE TABLE `dairy_app`.`customer_monthly_delivery` (`monthly_delivery_id` INT(11) NOT NULL AUTO_INCREMENT , `product_id` INT(11) NOT NULL , `quantity` DOUBLE NULL DEFAULT NULL , `customer_id` INT(11) NOT NULL , PRIMARY KEY (`monthly_delivery_id`)) ENGINE = InnoDB;
 ALTER TABLE `customer_monthly_delivery` ADD CONSTRAINT `product_id_foregin_key` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `customer_monthly_delivery` ADD CONSTRAINT `customer_id_foregin_key` FOREIGN KEY (`customer_id`) REFERENCES `customer`(`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -359,3 +353,19 @@ ALTER TABLE `customer_monthly_delivery` ADD CONSTRAINT `product_id_foregin_key` 
 CREATE TABLE `dairy_app`.`wastage` (`wastage_id` INT(11) NOT NULL AUTO_INCREMENT , `product_id` INT(11) NOT NULL , `quantity` FLOAT NOT NULL , `wastage_date` DATETIME NULL DEFAULT NULL , `location` VARCHAR(45) NOT NULL , `reason` VARCHAR(100) NOT NULL , PRIMARY KEY (`wastage_id`)) ENGINE = InnoDB;
 ALTER TABLE `wastage` ADD CONSTRAINT `wastage_product_id_foregin_key` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
+
+
+-- 20-09-2023 Prachi 
+CREATE TABLE `dairy_app`.`product` ( `product_id` INT NOT NULL AUTO_INCREMENT , `product_name` VARCHAR(500) NOT NULL , `product_category` VARCHAR(100) NOT NULL , `weight` DOUBLE NOT NULL , `unit` VARCHAR(100) NOT NULL , `tax_id` INT NOT NULL , `price_before_tax` DOUBLE NOT NULL , `selling_price_including_tax` DOUBLE NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , `deleted_at` DATETIME NOT NULL , `tax_amount` DOUBLE NOT NULL , PRIMARY KEY (`product_id`),FOREIGN KEY (`tax_id`) REFERENCES `tax`(`tax_id`)) ENGINE = InnoDB;
+
+
+-- 20-09-2023 Prachi
+CREATE TABLE `dairy_app`.`tax` ( `tax_id` INT NOT NULL AUTO_INCREMENT , `tax_name` VARCHAR(200) NOT NULL , `tax_percentage` VARCHAR(100) NOT NULL , `tax_reg_number` VARCHAR(100) NOT NULL , `created_at` DATETIME NOT NULL,`updated_at` DATETIME NOT NULL, `deleted_at` DATETIME NOT NULL, `hsn_code` VARCHAR(100) NOT NULL , PRIMARY KEY (`tax_id`)) ENGINE = InnoDB;
+
+
+-- 20-09-2023 Prachi
+CREATE TABLE `dairy_app`.`dairy_location` ( `location_id` INT NOT NULL AUTO_INCREMENT , `location_name` VARCHAR(100) NOT NULL ,`created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `deleted_at` DATETIME NOT NULL,PRIMARY KEY (`location_id`)) ENGINE = InnoDB;
+
+
+-- 20-09-2023 Prachi
+CREATE TABLE `dairy_app`.`stock` ( `stock_id` INT NOT NULL AUTO_INCREMENT , `product_id` INT NOT NULL , `location_id` INT NOT NULL , `inward_quantity` DOUBLE NOT NULL , `outward_quantity` DOUBLE NOT NULL , `stock_quantity` DOUBLE NOT NULL , `stock_date` DATETIME NOT NULL , PRIMARY KEY (`stock_id`),FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`),FOREIGN KEY (`location_id`) REFERENCES `dairy_location`(`location_id`)) ENGINE = InnoDB;
