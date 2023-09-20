@@ -64,7 +64,7 @@
                             <div class="item form-group">
                                 <label
                                     class="col-form-label col-md-3 col-sm-3 label-align float-start"
-                                    for="tax_reg_number">Tax Reg.
+                                    for="tax_reg_number">Tax Registration
                                     Number</label><span class="required"></span>
                                 </label>
                                 <div class="col-md-4 col-sm-4">
@@ -72,7 +72,7 @@
                                         class="form-control form-control-sm float-end"
                                         id="tax_reg_number"
                                         name="tax_reg_number" rows="3"
-                                        placeholder="Tax Reg. Number" required>
+                                        placeholder="Tax Registration Number" required>
                                     <span id="valid_reg_number"
                                         class="text-danger md-3"></span>
                                 </div>

@@ -42,7 +42,7 @@
               <tr class="headings">
                 <th class="column-title">Tax Name</th>
                 <th> Tax Percentage</th>
-                <th> Tax Reg. Number</th>
+                <th> Tax Registration Number</th>
                 <th>HSN Code</th>
                 <th class="column-title ">Edit</th>
                 <th class="column-title ">Delete</th>
