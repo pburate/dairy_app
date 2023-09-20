@@ -84,6 +84,4 @@ $session->setFlashdata('status', 'Product updated Successfully !');
     }
 }
 
-
-
 ?>
