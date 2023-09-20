@@ -22,7 +22,7 @@
       <div class=" mx-auto col-10 col-md-12 col-sm-12 ">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Add Products</h2>
+            <h2>Add Product</h2>
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
@@ -69,6 +69,26 @@
                                           
                 </div>
               </div>
+
+                <!-- tax name -->
+                <div class="item form-group">
+                <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="tax_name">
+                  Tax Name</label><span class="required"></span>
+                </label>
+                <div class="col-md-4 col-sm-4">
+                <select class="form-select form-select-sm float-end" name="tax_name" id="tax_name"
+                    required>
+                    <option>Select Tax</option>
+                    <?php foreach($taxes as $row):?>
+                    <option class="<?= $row["tax_percentage"]?>" id="<?= $row["tax_id"]?>"><?= $row["tax_name"]?></option>
+                    <?php endforeach;?> 
+                  </select>
+                       <input type="hidden" name="tax_id" id="tax_id">
+                  
+                </div>
+              </div>
+
+
                                         <!-- product unit -->
                                         <div class="item form-group">
                                         <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="product_unit"> Unit</label><span class="required"></span>
@@ -101,7 +121,9 @@
                                         <label class="col-form-label col-md-3 col-sm-3 label-align float-start" for="product_tax_amount">Tax Amount</label><span class="required"></span>
 											</label> 
                                             <div class="col-md-4 col-sm-4">
-                                            <input type="text" class="form-control form-control-sm float-end" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" required>
+            
+                                            <input type="text" class="form-control form-control-sm float-end" id="product_tax_amount" name="product_tax_amount" rows="3" placeholder="Tax Amount" required readonly>
+                                          
                                             <span id="valid_product_tax_amount"
                                         class="text-danger md-3"></span>
                                             </div>
@@ -124,11 +146,11 @@
               <div class="ln_solid"></div>
               <div class="item form-group">
                 <div class="col-md-6 col-sm-6 offset-md-3">
-                  <button type="submit" class="btn btn-success" id="form_submit_btn">Submit</button>
+            
+                <tr></tr>      <button type="submit" class="btn btn-success" id="form_submit_btn">Submit</button>
                   <a href="<?= base_url('ProductsController') ?>" class="btn btn-danger">Cancel</a>
                 </div>
               </div>
-
             </form>
           </div>
         </div>
@@ -138,9 +160,25 @@
   </div>
 </div>
 <!-- /page content -->
-
-
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
 <script src="<?= base_url('/public/assets/validations/products/products_validations.js') ?>"></script>
+<script>
 
+  $("#tax_name").change(function(){
+  var a = $(this).children(":selected").attr("id");
+  var percentage = $(this).children(":selected").attr("class");
+  $("#product_tax_amount").val(percentage);
+   var tax_id =$("#tax_id").val(a);
+   });
+
+  //selling price calculations
+  $("#price_before_tax").keyup(function(){
+  //  alert("oretoi");
+    var price_without_tax = parseFloat($(this).val());
+    // alert(price_without_tax);
+   var tax = parseFloat($("#product_tax_amount").val());
+   var selling_price_including_tax = price_without_tax + tax;
+   $("#selling_price_including_tax").val(selling_price_including_tax);
+  });
+</script>
