@@ -143,3 +143,4 @@
 <!-- /footer content -->
 <?php include(APPPATH . 'Views/Home/footer.php') ?>
 <script src="<?= base_url('/public/assets/validations/products/products_validations.js') ?>"></script>
+
